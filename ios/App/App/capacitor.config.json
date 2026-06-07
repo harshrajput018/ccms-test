@@ -1,0 +1,11 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ccms",
+	"webDir": "dist",
+	"packageClassList": [
+		"AppPlugin",
+		"HapticsPlugin",
+		"KeyboardPlugin",
+		"StatusBarPlugin"
+	]
+}
