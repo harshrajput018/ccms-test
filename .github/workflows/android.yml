@@ -32,8 +32,7 @@ steps:
       java-version: 17
 
   - name: Sync Capacitor
-    run: |
-      npx cap sync android
+    run: npx cap sync android
 
   - name: Build APK
     run: |
