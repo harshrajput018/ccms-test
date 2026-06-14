@@ -1,23 +1,23 @@
 import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
 import { useParams } from 'react-router-dom';
-import spare from '../FinalImage/spare.png'
-import AlarmOk from '../FinalImage/Alarm_Ok.png';
-import RMPSmoke1 from '../FinalImage/RMPSmoke1.png';
-import bulb_LL2_O from '../FinalImage/bulb_LL2_O.png';
-import Blower from '../FinalImage/Blower.png';
-import BlowerBlue from '../FinalImage/Blower_Blue.png';
-import FDSFire from '../FinalImage/FDSFire.png';
-import C1 from '../FinalImage/C1.png';
-import C2 from '../FinalImage/C2.png';
-import Condenser2 from '../FinalImage/Condensor2.png';
-import VFDReady from '../NewImages/fresh-air-damper.png';
-import VFDon from '../NewImages/FreshAirDamper_Closed.png';
-import uvLampGrey from '../NewImages/uv-lamp.png';
-import uvLampBlue from '../NewImages/UV Lamp ON.png';
-import D_CF from '../NewImages/Heater Not Ready.png';
-import D_CL from '../NewImages/heater.png';
-import airFilterClogged from '../NewImages/AirFilter_Clogged.png';
-import airFilter from '../NewImages/air-filter.png';
+import spare from '../Images/spare.png'
+import AlarmOk from '../Images/Alarm_Ok.png';
+import RMPSmoke1 from '../Images/RMPSmoke1.png';
+import bulb_LL2_O from '../Images/bulb_LL2_O.png';
+import Blower from '../Images/Blower.png';
+import BlowerBlue from '../Images/Blower_Blue.png';
+import FDSFire from '../Images/FDSFire.png';
+import C1 from '../Images/C1.png';
+import C2 from '../Images/C2.png';
+import Condenser2 from '../Images/Condensor2.png';
+import VFDReady from '../Images/fresh-air-damper.png';
+import VFDon from '../Images/FreshAirDamper_Closed.png';
+import uvLampGrey from '../Images/uv-lamp.png';
+import uvLampBlue from '../Images/UV Lamp ON.png';
+import D_CF from '../Images/Heater Not Ready.png';
+import D_CL from '../Images/heater.png';
+import airFilterClogged from '../Images/AirFilter_Clogged.png';
+import airFilter from '../Images/air-filter.png';
 
 const SYMBOLS: React.FC = () => {
   const { id, option, train } = useParams<{ train: string, id: string, option: string }>();

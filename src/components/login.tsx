@@ -103,6 +103,22 @@ const Login: React.FC = () => {
                         </IonCardContent>
                     </IonCard>
                 </div>
+                <div
+                    style={{
+                        position: "fixed",
+                        bottom: "10px",
+                        left: 0,
+                        right: 0,
+                        textAlign: "center",
+                        color: "#ffffff",
+                        fontSize: "14px",
+                        fontWeight: "500",
+                        opacity: 0.8,
+                        zIndex: 1000
+                    }}
+                >
+                    TCMS HMI v1.0.0
+                </div>
             </IonContent>
         </IonPage>
     );

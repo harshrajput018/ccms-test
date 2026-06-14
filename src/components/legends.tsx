@@ -1,16 +1,16 @@
 import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
 import { Link } from "react-router-dom";
 import "../components/ExploreContainer.css"; // Assuming you have your styles here
-import acNotImg from '../FinalImage/Ac not.png';
-import rmRmImg from '../FinalImage/RM_RM.png';
-import doorCommFailureImg from '../FinalImage/Door_Comm_Failure.png';
-import blowerImg from '../FinalImage/Blower.png';
-import condenserImg from '../FinalImage/Condensor2.png';
-import fdsFireImg from '../FinalImage/FDSFire.png';
-import rmpsSmokeImg from '../FinalImage/RMPSmoke1.png';
-import vfdReadyImg from '../FinalImage/VFDReady.png';
-import bulbRImg from '../FinalImage/bulb_R.png';
-import alarmOkImg from '../FinalImage/Alarm_Ok.png';
+import acNotImg from '../Images/Ac not.png';
+import rmRmImg from '../Images/RM_RM.png';
+import doorCommFailureImg from '../Images/Door_Comm_Failure.png';
+import blowerImg from '../Images/Blower.png';
+import condenserImg from '../Images/Condensor2.png';
+import fdsFireImg from '../Images/FDSFire.png';
+import rmpsSmokeImg from '../Images/RMPSmoke1.png';
+import vfdReadyImg from '../Images/VFDReady.png';
+import bulbRImg from '../Images/bulb_R.png';
+import alarmOkImg from '../Images/Alarm_Ok.png';
 
 const Legend: React.FC = () => {
   return (

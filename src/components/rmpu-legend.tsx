@@ -1,75 +1,129 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonCard,  } from '@ionic/react';
-import rm1 from '../FinalImage/RM_RM.png'
-import rm2 from '../FinalImage/RMPU_Emergency.png'
+import { IonContent, IonPage } from '@ionic/react';
+
+import defaultIcon from '../Images/RM_RM.png';
 
 const RMPULegendInfo: React.FC = () => {
 
+  const hvacLegend = [
 
-  const images = [
-    rm1,
-    rm2,
-    rm1,
-    rm2,rm1,
-    rm2,rm1,
-    rm2,rm1,
-    rm2,rm1,
-    rm2,rm1,
-    rm2,
+    {
+      img: defaultIcon,
+      description:
+        'HVAC Units in all the coaches is ready to operate in Emergency mode.'
+    },
 
-  ]
+    {
+      img: defaultIcon,
+      description:
+        'HVAC Blowers are running in emergency mode.'
+    },
+
+    {
+      img: defaultIcon,
+      description:
+        'HVAC units are ready for operation in Normal mode. Three phase supply available for all the HVAC units in the BU.'
+    },
+
+    {
+      img: defaultIcon,
+      description:
+        'Only 1 Bus has three phase supply available. Half of HVAC Work in normal mode, remaining half in emergency mode.'
+    },
+
+    {
+      img: defaultIcon,
+      description:
+        'HVAC units are running in compressor off and Blower on state.'
+    },
+
+    {
+      img: defaultIcon,
+      description:
+        'HVAC units are running in compressor on state.'
+    },
+
+    {
+      img: defaultIcon,
+      description:
+        'HVAC Status is not available.'
+    },
+
+    {
+      img: defaultIcon,
+      description:
+        '1 --> HVAC1 status in a corresponding coach. Symbol decoding same as Rake level.'
+    },
+
+    {
+      img: defaultIcon,
+      description:
+        '2 --> HVAC2 status in a corresponding coach. Symbol decoding same as Rake level.'
+    },
+
+    {
+      img: defaultIcon,
+      description:
+        'Heater ON.'
+    }
+
+  ];
 
   return (
     <IonPage>
+
       <div className="heading-first">
         <div className="train-number">
           <div className="button">22665</div>
         </div>
+
         <div className="title">
           <div className="button">HOMEPAGE</div>
         </div>
       </div>
+
       <div className="heading-first">
         <div className="train-number title">
-          <div className="button">RMPU LEGEND INFORMATION</div>
+          <div className="button">
+            HVAC LEGEND INFORMATION
+          </div>
         </div>
+
         <div className="title">
           <div className="button"></div>
         </div>
       </div>
 
       <IonContent>
-      <div className='full-height'>
-       
-          
-            {[
-              "RMPU unit 1 in coach is ready to operate in Emergency mode.",
-              "RMPU 1 Blower is running in emergency mode.",
-              "RMPU unit 1 is ready for operation in Normal mode. Three phase supply available for all the RMPU units in the BU.",
-              "RMPU unit 1 is running in compressor off and Blower on state.",
-              "RMPU unit 1 is running in compressor on state.",
-              "RMPU 1 status is not available.",
-              "RMPU 1 Heater ON.",
-              "RMPU unit 2 in coach is ready to operate in Emergency mode.",
-              "RMPU 2 Blower is running in emergency mode.",
-              "RMPU unit 2 is ready for operation in Normal mode. Three phase supply available for all the RMPU units in the BU.",
-              "RMPU unit 2 is running in compressor off and Blower on state.",
-              "RMPU unit 2 is running in compressor on state.",
-              "RMPU 2 status is not available.",
-              "RMPU 2 Heater ON."
-            ].map((text, index) => (
-              
-                <div key={index} className="equipment-item">
-                <div className="icon">
-                    <img src={images[index]} alt={`icon`} />
-                </div>
-                <div className='name'>{text}</div>
+
+        <div className="full-height">
+
+          {hvacLegend.map((item, index) => (
+
+            <div
+              key={index}
+              className="equipment-item"
+            >
+
+              <div className="icon">
+                <img
+                  src={item.img}
+                  alt="icon"
+                />
+              </div>
+
+              <div className="name">
+                {item.description}
+              </div>
+
             </div>
-              
-            ))}
-          
-       </div>
+
+          ))}
+
+        </div>
+
       </IonContent>
+
     </IonPage>
   );
 };
