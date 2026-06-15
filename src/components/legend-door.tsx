@@ -7,6 +7,8 @@ import Door_A_O from '../Images/Door_A_O.png';
 import door3 from '../Images/door-3.png';
 import door2 from '../Images/door-2.png';
 import Door_Comm_Failure from '../Images/Door_Comm_Failure.png';
+import Door_Emergency_Egress from '../Images/Door_E_E.png';
+import Door_Status_Unknown from '../Images/Door_U.png';
 
 const DoorInfo: React.FC = () => {
 
@@ -27,13 +29,13 @@ const DoorInfo: React.FC = () => {
     {
       img: Door_A_O,
       description:
-        'At least one door is in open state.'
+        'Atleast one door is in open state.'
     },
 
     {
       img: door3,
       description:
-        'At least one door is isolated.'
+        'Atleast one door is isolated.'
     },
 
     {
@@ -46,6 +48,18 @@ const DoorInfo: React.FC = () => {
       img: Door_Comm_Failure,
       description:
         'Door Communication Failure.'
+    },
+
+    {
+      img: Door_Emergency_Egress,
+      description:
+        'Door Emergency Egress.'
+    },
+
+    {
+      img: Door_Status_Unknown,
+      description:
+        'Door Status Unknown/Invalid.'
     }
 
   ];

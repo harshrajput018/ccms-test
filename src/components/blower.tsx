@@ -17,58 +17,58 @@ const BlowerInfo: React.FC = () => {
 
   const blowerInfo = [
 
-    // HVAC 1
+    // RMPU 1
 
     {
       img: blower1,
-      description: 'HVAC1 Blower is running in EMY Mode'
+      description: 'RMPU 1 Blower is running in EMY Mode'
     },
 
     {
       img: blower2,
-      description: 'HVAC1 Blower ON'
+      description: 'RMPU 1 Blower ON'
     },
 
     {
       img: blower3,
-      description: 'HVAC1 Blower is ready for Operation'
+      description: 'RMPU 1 Blower is ready for Operation'
     },
 
     {
       img: blower4,
-      description: 'HVAC1 Blower is not ready for Operation'
+      description: 'RMPU 1 Blower is not ready for Operation'
     },
 
     {
       img: blower5,
-      description: 'HVAC1 Blower status Unknown/Invalid'
+      description: 'RMPU 1 Blower status Unknown/Invalid'
     },
 
-    // HVAC 2
+    // RMPU 2
 
     {
       img: blower6,
-      description: 'HVAC2 Blower is running in EMY Mode'
+      description: 'RMPU 2 Blower is running in EMY Mode'
     },
 
     {
       img: blower7,
-      description: 'HVAC2 Blower ON'
+      description: 'RMPU 2 Blower ON'
     },
 
     {
       img: blower8,
-      description: 'HVAC2 Blower is ready for Operation'
+      description: 'RMPU 2 Blower is ready for Operation'
     },
 
     {
       img: blower9,
-      description: 'HVAC2 Blower is not ready for Operation'
+      description: 'RMPU 2 Blower is not ready for Operation'
     },
 
     {
       img: blower10,
-      description: 'HVAC2 Blower status Unknown/Invalid'
+      description: 'RMPU 2 Blower status Unknown/Invalid'
     }
 
   ];

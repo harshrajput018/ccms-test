@@ -29,96 +29,96 @@ const VFDIcon: React.FC = () => {
 
   const vfdStatuses = [
 
-    // HVAC 1 Compressor
+    // RMPU 1 Compressor VFD
 
     {
       img: RMPU1_C_V_O,
-      description: 'HVAC 1 Compressor VFD is ON'
+      description: 'RMPU 1 Compressor VFD is ON'
     },
     {
       img: RMPU1_C_V_NR,
-      description: 'HVAC 1 Compressor VFD is Not ready for operation'
+      description: 'RMPU 1 Compressor VFD is Not ready for operation'
     },
     {
       img: RMPU1_C_V_R,
-      description: 'HVAC 1 Compressor VFD is ready for operation'
+      description: 'RMPU 1 Compressor VFD is ready for operation'
     },
     {
       img: RMPU1_C_V_F,
-      description: 'HVAC 1 Compressor VFD is Faulty'
+      description: 'RMPU 1 Compressor VFD is Faulty'
     },
     {
       img: RMPU1_C_V_U,
-      description: 'HVAC 1 Compressor VFD Status Unknown/Invalid'
+      description: 'RMPU 1 Compressor VFD Status Unknown/Invalid'
     },
 
-    // HVAC 1 Blower CONV.
-
-    {
-      img: RMPU1_B_V_O,
-      description: 'HVAC 1 Blower CONV. is ON'
-    },
-    {
-      img: RMPU1_B_V_NR,
-      description: 'HVAC 1 Blower CONV. is Not ready for operation'
-    },
-    {
-      img: RMPU1_B_V_R,
-      description: 'HVAC 1 Blower CONV. is ready for operation'
-    },
-    {
-      img: RMPU1_B_V_F,
-      description: 'HVAC 1 Blower CONV. is Faulty'
-    },
-    {
-      img: RMPU1_B_V_U,
-      description: 'HVAC 1 Blower CONV. Status Unknown/Invalid'
-    },
-
-    // HVAC 2 Compressor
+    // RMPU 2 Compressor VFD
 
     {
       img: RMPU2_C_V_O,
-      description: 'HVAC 2 Compressor VFD is ON'
+      description: 'RMPU 2 Compressor VFD is ON'
     },
     {
       img: RMPU2_C_V_NR,
-      description: 'HVAC 2 Compressor VFD is Not ready for operation'
+      description: 'RMPU 2 Compressor VFD is Not ready for operation'
     },
     {
       img: RMPU2_C_V_R,
-      description: 'HVAC 2 Compressor VFD is ready for operation'
+      description: 'RMPU 2 Compressor VFD is ready for operation'
     },
     {
       img: RMPU2_C_V_F,
-      description: 'HVAC 2 Compressor VFD is Faulty'
+      description: 'RMPU 2 Compressor VFD is Faulty'
     },
     {
       img: RMPU2_C_V_U,
-      description: 'HVAC 2 Compressor VFD Status Unknown/Invalid'
+      description: 'RMPU 2 Compressor VFD Status Unknown/Invalid'
     },
 
-    // HVAC 2 Blower CONV.
+    // RMPU 1 Blower VFD
+
+    {
+      img: RMPU1_B_V_O,
+      description: 'RMPU 1 Blower VFD is ON'
+    },
+    {
+      img: RMPU1_B_V_NR,
+      description: 'RMPU 1 Blower VFD is Not ready for operation'
+    },
+    {
+      img: RMPU1_B_V_R,
+      description: 'RMPU 1 Blower VFD is ready for operation'
+    },
+    {
+      img: RMPU1_B_V_F,
+      description: 'RMPU 1 Blower VFD is Faulty'
+    },
+    {
+      img: RMPU1_B_V_U,
+      description: 'RMPU 1 Blower VFD Status Unknown/Invalid'
+    },
+
+    // RMPU 2 Blower VFD
 
     {
       img: RMPU2_B_V_O,
-      description: 'HVAC 2 Blower CONV. is ON'
+      description: 'RMPU 2 Blower VFD is ON'
     },
     {
       img: RMPU2_B_V_NR,
-      description: 'HVAC 2 Blower CONV. is Not ready for operation'
+      description: 'RMPU 2 Blower VFD is Not ready for operation'
     },
     {
       img: RMPU2_B_V_R,
-      description: 'HVAC 2 Blower CONV. is ready for operation'
+      description: 'RMPU 2 Blower VFD is ready for operation'
     },
     {
       img: RMPU2_B_V_F,
-      description: 'HVAC 2 Blower CONV. is Faulty'
+      description: 'RMPU 2 Blower VFD is Faulty'
     },
     {
       img: RMPU2_B_V_U,
-      description: 'HVAC 2 Blower CONV. Status Unknown/Invalid'
+      description: 'RMPU 2 Blower VFD Status Unknown/Invalid'
     }
 
   ];

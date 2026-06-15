@@ -14,48 +14,48 @@ const Compressor = () => {
 
     const compressorStates = [
 
-        // HVAC Compressor 1
+        // RMPU Compressor 1
 
         {
             img: RMPU_CMP1_ON,
-            description: "HVAC Compressor 1 ON."
+            description: "RMPU Compressor 1 ON"
         },
 
         {
             img: RMPU_CMP1_R,
-            description: "HVAC Compressor 1 is Ready for Operation."
+            description: "RMPU Compressor 1 is Ready for Operation"
         },
 
         {
             img: RMPU_CMP1_NR,
-            description: "HVAC Compressor 1 is Not Ready for Operation."
+            description: "RMPU Compressor 1 is Not Ready for Operation"
         },
 
         {
             img: RMPU_CMP1_U,
-            description: "HVAC Compressor 1 Status Unknown/Invalid."
+            description: "RMPU Compressor 1 Status Unknown/Invalid"
         },
 
-        // HVAC Compressor 2
+        // RMPU Compressor 2
 
         {
             img: RMPU_CMP2_ON,
-            description: "HVAC Compressor 2 ON."
+            description: "RMPU Compressor 2 ON"
         },
 
         {
             img: RMPU_CMP2_R,
-            description: "HVAC Compressor 2 is Ready for Operation."
+            description: "RMPU Compressor 2 is Ready for Operation"
         },
 
         {
             img: RMPU_CMP2_NR,
-            description: "HVAC Compressor 2 is Not Ready for Operation."
+            description: "RMPU Compressor 2 is Not Ready for Operation"
         },
 
         {
             img: RMPU_CMP2_U,
-            description: "HVAC Compressor 2 Status Unknown/Invalid."
+            description: "RMPU Compressor 2 Status Unknown/Invalid"
         }
 
     ];
@@ -80,7 +80,7 @@ const Compressor = () => {
                     <div className="heading-first">
                         <div className="train-number title">
                             <div className="button">
-                                HVAC COMPRESSOR LEGEND INFORMATION
+                                RMPU COMPRESSOR LEGEND INFORMATION
                             </div>
                         </div>
 

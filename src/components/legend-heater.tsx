@@ -4,6 +4,7 @@ import { IonPage, IonContent } from '@ionic/react';
 import heaterReady from '../Images/Heater Ready.png';
 import heaterNotReady from '../Images/Heater Not Ready.png';
 import heaterOn from '../Images/Heater On.png';
+import heaterFault from '../Images/Heater_Faulty.png';
 
 const Heater: React.FC = () => {
 
@@ -22,6 +23,11 @@ const Heater: React.FC = () => {
         {
             img: heaterOn,
             description: "Heater ON"
+        },
+
+        {
+            img: heaterFault,
+            description: "Heater Fault"
         }
 
     ];

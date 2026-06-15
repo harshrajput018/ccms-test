@@ -12,60 +12,60 @@ import defaultIcon from '../Images/RM_RM.png';
 
 const RMPULegendInfo: React.FC = () => {
 
-  const hvacLegend = [
+  const rmpuLegend = [
 
     {
       img: RMPU_R,
       description:
-        'HVAC Units in all the coaches is ready to operate in Emergency mode.'
+        'RMPU Units in all the coaches is ready to operate in Emergency mode.'
     },
 
     {
       img: RMPU_B_R,
       description:
-        'HVAC Blowers are running in emergency mode.'
+        'RMPU Blowers are running in emergency mode.'
     },
 
     {
       img: defaultIcon,
       description:
-        'HVAC units are ready for operation in Normal mode. Three phase supply available for all the HVAC units in the BU.'
+        'RMPU units are ready for operation in Normal mode. Three phase supply available for all the RMPU units in the BU.'
     },
 
     {
       img: defaultIcon,
       description:
-        'Only 1 Bus has three phase supply available. Half of HVAC Work in normal mode, remaining half in emergency mode.'
+        'Only 1 Bus has three phase supply available. Half of RMPU Work in normal mode, remaining half in emergency mode.'
     },
 
     {
       img: defaultIcon,
       description:
-        'HVAC units are running in compressor off and Blower on state.'
+        'RMPU units are running in compressor off and Blower on state.'
     },
 
     {
       img: RMPU_C_O,
       description:
-        'HVAC units are running in compressor on state.'
+        'RMPU units are running in compressor on state.'
     },
 
     {
       img: RMPU_S_N,
       description:
-        'HVAC Status is not available.'
+        'RMPU Status is not available.'
     },
 
     {
       img: RMPU1_D_S,
       description:
-        '1 --> HVAC1 status in a corresponding coach. Symbol decoding same as Rake level.'
+        '1 --> RMPU1 status in a corresponding coach. Symbol decoding same as Rake level.'
     },
 
     {
       img: RMPU2_D_S,
       description:
-        '2 --> HVAC2 status in a corresponding coach. Symbol decoding same as Rake level.'
+        '2 --> RMPU2 status in a corresponding coach. Symbol decoding same as Rake level.'
     },
 
     {
@@ -92,7 +92,7 @@ const RMPULegendInfo: React.FC = () => {
       <div className="heading-first">
         <div className="train-number title">
           <div className="button">
-            HVAC LEGEND INFORMATION
+            RMPU LEGEND INFORMATION
           </div>
         </div>
 
@@ -105,7 +105,7 @@ const RMPULegendInfo: React.FC = () => {
 
         <div className="full-height">
 
-          {hvacLegend.map((item, index) => (
+          {rmpuLegend.map((item, index) => (
 
             <div
               key={index}

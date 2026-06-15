@@ -21,56 +21,64 @@ const CondenserLegendInfo: React.FC = () => {
 
   const condenserStates = [
 
+    // RMPU1 Condenser Fan 1
+
     {
       img: RMPU1_C_F_O,
-      description: 'HVAC1 Condenser Fan 1 is ON.'
+      description: 'RMPU1 Condenser Fan 1 is ON'
     },
     {
       img: RMPU1_C_F_R,
-      description: 'HVAC1 Condenser Fan 1 is ready for operation.'
+      description: 'RMPU1 Condenser Fan 1 is ready for operation'
     },
     {
       img: RMPU1_C_F_NR,
-      description: 'HVAC1 Condenser Fan 1 is Not ready for operation.'
+      description: 'RMPU1 Condenser Fan 1 is not ready for Operation'
     },
+
+    // RMPU1 Condenser Fan 2
 
     {
       img: RMPU1_C_F2_O,
-      description: 'HVAC1 Condenser Fan 2 is ON.'
+      description: 'RMPU1 Condenser Fan 2 is ON'
     },
     {
       img: RMPU1_C_F2_R,
-      description: 'HVAC1 Condenser Fan 2 is ready for operation.'
+      description: 'RMPU1 Condenser Fan 2 is ready for operation'
     },
     {
       img: RMPU1_C_F2_NR,
-      description: 'HVAC1 Condenser Fan 2 is Not ready for operation.'
+      description: 'RMPU1 Condenser Fan 2 is not ready for Operation'
     },
+
+    // RMPU2 Condenser Fan 1
 
     {
       img: RMPU2_C_F_O,
-      description: 'HVAC2 Condenser Fan 1 is ON.'
+      description: 'RMPU2 Condenser Fan 1 is ON'
     },
     {
       img: RMPU2_C_F_R,
-      description: 'HVAC2 Condenser Fan 1 is ready for operation.'
+      description: 'RMPU2 Condenser Fan 1 is ready for operation'
     },
     {
       img: RMPU2_C_F_NR,
-      description: 'HVAC2 Condenser Fan 1 is Not ready for operation.'
+      description: 'RMPU2 Condenser Fan 1 is not ready for Operation'
     },
+
+    // RMPU2 Condenser Fan 2
 
     {
       img: RMPU2_C_F2_O,
-      description: 'HVAC2 Condenser Fan 2 is ON.'
+      description: 'RMPU2 Condenser Fan 2 is ON'
     },
     {
       img: RMPU2_C_F2_R,
-      description: 'HVAC2 Condenser Fan 2 is ready for operation.'
+      description: 'RMPU2 Condenser Fan 2 is ready for operation'
     },
     {
       img: RMPU2_C_F2_NR,
-      description: 'HVAC2 Condenser Fan 2 is Not ready for operation.'
+      description: 'RMPU2 Condenser Fan 2 is not ready for Operation'
     }
 
   ];

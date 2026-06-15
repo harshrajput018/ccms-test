@@ -50,16 +50,14 @@ const Login: React.FC = () => {
     });
 
     const formatDateTime = () => {
+
         const now = new Date();
 
-        const date = now.toLocaleDateString('en-GB');
-        const time = now.toLocaleTimeString('en-GB', {
-            hour12: false
-        });
-
         setCurrentDateTime({
-            date,
-            time
+            date: now.toLocaleDateString('en-GB'),
+            time: now.toLocaleTimeString('en-GB', {
+                hour12: false
+            })
         });
     };
 
@@ -79,7 +77,7 @@ const Login: React.FC = () => {
 
         <IonPage>
 
-            <IonContent>
+            <IonContent fullscreen>
 
                 <div className="full-height">
 
@@ -111,9 +109,27 @@ const Login: React.FC = () => {
 
                         </div>
 
-                        <IonCardContent className="LoginContent">
+                        <IonCardContent
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                height: "calc(100vh - 180px)"
+                            }}
+                        >
 
-                            <div className="Login_outer">
+                            <div
+                                className="Login_outer"
+                                style={{
+                                    width: "350px",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    border: "1px solid lightgrey",
+                                    padding: "15px",
+                                    backgroundColor: "transparent"
+                                }}
+                            >
 
                                 <input
                                     type="text"
@@ -123,6 +139,9 @@ const Login: React.FC = () => {
                                     onChange={(e) =>
                                         setUsername(e.target.value)
                                     }
+                                    style={{
+                                        width: "100%"
+                                    }}
                                 />
 
                                 <input
@@ -133,11 +152,19 @@ const Login: React.FC = () => {
                                     onChange={(e) =>
                                         setPassword(e.target.value)
                                     }
+                                    style={{
+                                        width: "100%",
+                                        marginTop: "10px"
+                                    }}
                                 />
 
                                 <div
                                     className="LoginButton"
                                     onClick={handleLogin}
+                                    style={{
+                                        marginTop: "15px",
+                                        cursor: "pointer"
+                                    }}
                                 >
                                     LOG IN
                                 </div>
@@ -165,8 +192,7 @@ const Login: React.FC = () => {
                         zIndex: 1000
                     }}
                 >
-                    <div></div>
-                    <div>CCMS Version 0.1</div>
+                    CCMS Version 0.1
                 </div>
 
             </IonContent>
