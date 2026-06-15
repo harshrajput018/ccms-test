@@ -102,50 +102,48 @@ const BlowerInfo: React.FC = () => {
 
         <div className="full-height">
 
-          <div className="equipment-list">
+          {blowerInfo.map((info, index) => (
 
-            {blowerInfo.map((info, index) => (
+            <div
+              key={index}
+              className="equipment-item"
+            >
 
               <div
-                key={index}
-                className="equipment-item"
+                className="icon"
+                style={{
+                  width: "50px",
+                  height: "40px",
+                  border: "2px solid white",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexShrink: 0,
+                  margin: "4px",
+                  boxSizing: "border-box",
+                  overflow: "hidden",
+                  padding: 0
+                }}
               >
-
-                <div
-                  className="icon"
+                <img
+                  src={info.img}
+                  alt="blower icon"
                   style={{
-                    width: "70px",
-                    height: "55px",
-                    border: "2px solid white",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexShrink: 0,
-                    margin: "4px",
-                    boxSizing: "border-box"
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "fill",
+                    display: "block"
                   }}
-                >
-                  <img
-                    src={info.img}
-                    alt="blower icon"
-                    style={{
-                      width: "42px",
-                      height: "42px",
-                      objectFit: "contain",
-                      display: "block"
-                    }}
-                  />
-                </div>
-
-                <div className="name">
-                  {info.description}
-                </div>
-
+                />
               </div>
 
-            ))}
+              <div className="name">
+                {info.description}
+              </div>
 
-          </div>
+            </div>
+
+          ))}
 
         </div>
 

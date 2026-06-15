@@ -61,15 +61,17 @@ const Filter: React.FC = () => {
                                 <div
                                     className="icon"
                                     style={{
-                                        width: "70px",
-                                        height: "55px",
+                                        width: "50px",
+                                        height: "40px",
                                         border: "2px solid white",
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
                                         flexShrink: 0,
                                         margin: "4px",
-                                        boxSizing: "border-box"
+                                        boxSizing: "border-box",
+                                        overflow: "hidden",
+                                        padding: 0
                                     }}
                                 >
 
@@ -77,9 +79,9 @@ const Filter: React.FC = () => {
                                         src={item.img}
                                         alt="air filter"
                                         style={{
-                                            width: "42px",
-                                            height: "42px",
-                                            objectFit: "contain",
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "fill",
                                             display: "block"
                                         }}
                                     />

@@ -65,14 +65,17 @@ const Lamp: React.FC = () => {
                             <div
                                 className="icon"
                                 style={{
-                                    width: "110px",
-                                    height: "70px",
+                                    width: "50px",
+                                    height: "40px",
                                     border: "2px solid white",
                                     display: "flex",
                                     justifyContent: "center",
                                     alignItems: "center",
+                                    flexShrink: 0,
+                                    margin: "4px",
                                     boxSizing: "border-box",
-                                    flexShrink: 0
+                                    overflow: "hidden",
+                                    padding: 0
                                 }}
                             >
 
@@ -80,9 +83,9 @@ const Lamp: React.FC = () => {
                                     src={item.img}
                                     alt="uv lamp icon"
                                     style={{
-                                        maxWidth: "85%",
-                                        maxHeight: "85%",
-                                        objectFit: "contain",
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "fill",
                                         display: "block"
                                     }}
                                 />

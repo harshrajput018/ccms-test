@@ -13,6 +13,8 @@ const SmokeInfo: React.FC = () => {
 
   const smokeInfo = [
 
+    // HVAC1
+
     {
       img: RMPU1_S_D,
       description: 'HVAC1 Smoke detected'
@@ -27,6 +29,8 @@ const SmokeInfo: React.FC = () => {
       img: RMPU1_S_U,
       description: 'HVAC1 Smoke Detector is unknown state'
     },
+
+    // HVAC2
 
     {
       img: RMPU2_S_D,
@@ -84,15 +88,17 @@ const SmokeInfo: React.FC = () => {
               <div
                 className="icon"
                 style={{
-                  width: "70px",
-                  height: "55px",
+                  width: "50px",
+                  height: "40px",
                   border: "2px solid white",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   flexShrink: 0,
                   margin: "4px",
-                  boxSizing: "border-box"
+                  boxSizing: "border-box",
+                  overflow: "hidden",
+                  padding: 0
                 }}
               >
 
@@ -100,9 +106,9 @@ const SmokeInfo: React.FC = () => {
                   src={info.img}
                   alt="smoke icon"
                   style={{
-                    width: "42px",
-                    height: "42px",
-                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "fill",
                     display: "block"
                   }}
                 />

@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { IonCard, IonCardContent, IonPage, IonContent, IonRouterLink } from '@ionic/react';
+import {
+    IonCard,
+    IonCardContent,
+    IonPage,
+    IonContent
+} from '@ionic/react';
 import { useParams } from 'react-router-dom';
 
 const Login: React.FC = () => {
-    const { train, option } = useParams<{ train: string, option: string }>();
+
+    const { train, option } = useParams<{
+        train: string,
+        option: string
+    }>();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = async () => {
+
         const response = await fetch('/users.csv');
         const csvText = await response.text();
 
@@ -17,6 +27,7 @@ const Login: React.FC = () => {
         let valid = false;
 
         for (let i = 1; i < lines.length; i++) {
+
             const [user, pass] = lines[i].trim().split(',');
 
             if (user === username && pass === password) {
@@ -38,55 +49,80 @@ const Login: React.FC = () => {
         time: ''
     });
 
-    // Function to format date and time
     const formatDateTime = () => {
         const now = new Date();
-        const date = now.toLocaleDateString('en-GB'); // dd/mm/yy format
-        const time = now.toLocaleTimeString('en-GB', { hour12: false }); // hh:mm:ss format (24 hr)
-        setCurrentDateTime({ date, time });
+
+        const date = now.toLocaleDateString('en-GB');
+        const time = now.toLocaleTimeString('en-GB', {
+            hour12: false
+        });
+
+        setCurrentDateTime({
+            date,
+            time
+        });
     };
 
     useEffect(() => {
-        // Set the initial date and time
+
         formatDateTime();
 
-        // Optionally, update the time every second
         const interval = setInterval(() => {
             formatDateTime();
         }, 1000);
 
-        return () => clearInterval(interval); // Cleanup interval on component unmount
+        return () => clearInterval(interval);
+
     }, []);
 
     return (
+
         <IonPage>
+
             <IonContent>
-                <div className='full-height'>
+
+                <div className="full-height">
+
                     <IonCard className="custom-card">
+
                         <div className="heading-first">
+
                             <div className="train-number">
                                 <div style={{ fontWeight: 'bold' }}></div>
                             </div>
+
                             <div className="train-number">
-                                <div style={{ fontWeight: 'bold' }}>LOGIN/USERID</div>
+                                <div style={{ fontWeight: 'bold' }}>
+                                    LOGIN/USERID
+                                </div>
                             </div>
+
                         </div>
+
                         <div className="heading-first">
+
                             <div className="train-number">
-                                {currentDateTime.date} {/* Dynamic Date */}
+                                {currentDateTime.date}
                             </div>
+
                             <div className="title">
-                                {currentDateTime.time} {/* Dynamic Time */}
+                                {currentDateTime.time}
                             </div>
+
                         </div>
-                        <IonCardContent className='LoginContent'>
+
+                        <IonCardContent className="LoginContent">
+
                             <div className="Login_outer">
+
                                 <input
                                     type="text"
                                     className="username"
                                     placeholder="Username"
                                     value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
+                                    onChange={(e) =>
+                                        setUsername(e.target.value)
+                                    }
                                 />
 
                                 <input
@@ -94,33 +130,49 @@ const Login: React.FC = () => {
                                     className="password"
                                     placeholder="Password"
                                     value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    onChange={(e) =>
+                                        setPassword(e.target.value)
+                                    }
                                 />
-                                <div className="LoginButton" onClick={handleLogin}>
+
+                                <div
+                                    className="LoginButton"
+                                    onClick={handleLogin}
+                                >
                                     LOG IN
                                 </div>
+
                             </div>
+
                         </IonCardContent>
+
                     </IonCard>
+
                 </div>
+
+                {/* Footer */}
+
                 <div
                     style={{
                         position: "fixed",
-                        bottom: "10px",
-                        left: 0,
-                        right: 0,
+                        bottom: "15px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
                         textAlign: "center",
-                        color: "#ffffff",
+                        color: "#888",
                         fontSize: "14px",
                         fontWeight: "500",
-                        opacity: 0.8,
                         zIndex: 1000
                     }}
                 >
-                    TCMS HMI v1.0.0
+                    <div>CCMS</div>
+                    <div>Version 1.1</div>
                 </div>
+
             </IonContent>
+
         </IonPage>
+
     );
 };
 

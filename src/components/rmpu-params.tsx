@@ -141,7 +141,7 @@ const PARAMS: React.FC = () => {
                         </table>
                     </div>
                     <Link to='/legend' className="legendBtn">
-                        <div style={{ position: 'fixed', bottom: '70px', right: '20px' }} className="button">LEGENDS</div>
+                        <div style={{ position: 'fixed', bottom: '50px', right: '20px' }} className="button">LEGENDS</div>
                     </Link>
                 </div>
             </IonContent>
