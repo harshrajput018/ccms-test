@@ -1,6 +1,13 @@
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 
+import RMPU_R from '../Images/RMPU_R.png';
+import RMPU_B_R from '../Images/RMPU_B_R.png';
+import RMPU_C_O from '../Images/RMPU_C_O.png';
+import RMPU_S_N from '../Images/RMPU_S_N.png';
+import RMPU1_D_S from '../Images/RMPU1_D_S.png';
+import RMPU2_D_S from '../Images/RMPU2_D_S.png';
+
 import defaultIcon from '../Images/RM_RM.png';
 
 const RMPULegendInfo: React.FC = () => {
@@ -8,13 +15,13 @@ const RMPULegendInfo: React.FC = () => {
   const hvacLegend = [
 
     {
-      img: defaultIcon,
+      img: RMPU_R,
       description:
         'HVAC Units in all the coaches is ready to operate in Emergency mode.'
     },
 
     {
-      img: defaultIcon,
+      img: RMPU_B_R,
       description:
         'HVAC Blowers are running in emergency mode.'
     },
@@ -38,25 +45,25 @@ const RMPULegendInfo: React.FC = () => {
     },
 
     {
-      img: defaultIcon,
+      img: RMPU_C_O,
       description:
         'HVAC units are running in compressor on state.'
     },
 
     {
-      img: defaultIcon,
+      img: RMPU_S_N,
       description:
         'HVAC Status is not available.'
     },
 
     {
-      img: defaultIcon,
+      img: RMPU1_D_S,
       description:
         '1 --> HVAC1 status in a corresponding coach. Symbol decoding same as Rake level.'
     },
 
     {
-      img: defaultIcon,
+      img: RMPU2_D_S,
       description:
         '2 --> HVAC2 status in a corresponding coach. Symbol decoding same as Rake level.'
     },
@@ -105,10 +112,31 @@ const RMPULegendInfo: React.FC = () => {
               className="equipment-item"
             >
 
-              <div className="icon">
+              <div
+                className="icon"
+                style={{
+                  width: "50px",
+                  height: "40px",
+                  border: "2px solid white",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexShrink: 0,
+                  margin: "4px",
+                  boxSizing: "border-box",
+                  overflow: "hidden",
+                  padding: 0
+                }}
+              >
                 <img
                   src={item.img}
                   alt="icon"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "fill",
+                    display: "block"
+                  }}
                 />
               </div>
 
