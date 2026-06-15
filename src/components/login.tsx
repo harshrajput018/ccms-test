@@ -165,8 +165,8 @@ const Login: React.FC = () => {
                         zIndex: 1000
                     }}
                 >
-                    <div>CCMS</div>
-                    <div>Version 1.1</div>
+                    <div></div>
+                    <div>CCMS Version 0.1</div>
                 </div>
 
             </IonContent>
