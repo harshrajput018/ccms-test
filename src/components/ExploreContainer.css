@@ -563,9 +563,9 @@ th {
 }
 
 .LoginButton {
-    min-height: 55px !important;
-    padding: 0.8rem 1.2rem !important;
-    font-size: 22px !important;
+    min-height: 25px !important;
+    padding: 0.6rem 1.2rem !important;
+    font-size: 16px !important;
     font-weight: bold !important;
 }
 

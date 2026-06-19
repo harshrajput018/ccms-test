@@ -163,7 +163,8 @@ const Login: React.FC = () => {
                                     onClick={handleLogin}
                                     style={{
                                         marginTop: "15px",
-                                        cursor: "pointer"
+                                        cursor: "pointer",
+                                        fontSize:'10px',
                                     }}
                                 >
                                     LOG IN
