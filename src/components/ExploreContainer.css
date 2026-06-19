@@ -1,5 +1,7 @@
 body{
   font-weight: 600;
+  border: solid 2px white;
+  margin: 10px;
 }
 
 button{

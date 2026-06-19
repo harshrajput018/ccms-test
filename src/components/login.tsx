@@ -79,7 +79,7 @@ const Login: React.FC = () => {
 
             <IonContent fullscreen>
 
-                <div className="full-height">
+                <div className="full-height" >
 
                     <IonCard className="custom-card">
 
