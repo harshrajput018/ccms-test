@@ -1,4 +1,4 @@
-import { IonPage, IonContent } from "@ionic/react";
+import { IonPage, IonContent, IonRouterLink } from "@ionic/react";
 
 import RMPU_CMP1_ON from "../Images/RMPU_CMP1_ON.png";
 import RMPU_CMP1_R from "../Images/RMPU_CMP1_R.png";
@@ -9,6 +9,7 @@ import RMPU_CMP2_ON from "../Images/RMPU_CMP2_ON.png";
 import RMPU_CMP2_R from "../Images/RMPU_CMP2_R.png";
 import RMPU_CMP2_NR from "../Images/RMPU_CMP2_NR.png";
 import RMPU_CMP2_U from "../Images/RMPU_CMP2_U.png";
+import BackButton from "./backButton";
 
 const Compressor = () => {
 
@@ -68,9 +69,19 @@ const Compressor = () => {
                 <div className="full-height">
 
                     <div className="heading-first">
-                        <div className="train-number">
-                            <div className="button">22665</div>
-                        </div>
+                        <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
                         <div className="title">
                             <div className="button">HOMEPAGE</div>
@@ -141,7 +152,7 @@ const Compressor = () => {
                 </div>
 
             </IonContent>
-
+        <BackButton />                
         </IonPage>
     );
 };

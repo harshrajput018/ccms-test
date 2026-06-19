@@ -1,6 +1,8 @@
 import React from 'react';
 import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
 import { useParams } from 'react-router-dom';
+import BackButton from './backButton';
+import LegendButton from './legendButton';
 
 const Second: React.FC = () => {
   const { id, train } = useParams<{ train:string,id: string }>();
@@ -32,7 +34,19 @@ const Second: React.FC = () => {
       <IonContent>
         <div className='full-height'>
           <div className="heading-first">
-            <div className="train-number"><div>{train}</div></div>
+            <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {train || '22665'}
+</IonRouterLink>
             <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
           </div>
           <div className="heading-first">
@@ -45,9 +59,10 @@ const Second: React.FC = () => {
             <IonRouterLink routerLink={`/${train}/third/${id}/${myMap.get(id)[2]}`} className='coach'><div>{myMap.get(id)[2]}</div></IonRouterLink>
             <IonRouterLink routerLink={`/${train}/third/${id}/${myMap.get(id)[3]}`} className='coach'><div>{myMap.get(id)[3]}</div></IonRouterLink>
           </div>
-          <IonRouterLink routerLink={'/legend'} className="legendBtn"><div>LEGENDS</div></IonRouterLink>
+          <LegendButton />
         </div>
       </IonContent>
+      <BackButton />
     </IonPage>
   );
 }

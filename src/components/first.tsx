@@ -1,6 +1,8 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonRouterLink } from '@ionic/react';
 import { Link, useParams } from 'react-router-dom';
 import './ExploreContainer.css'; // Make sure to keep the CSS file the same
+import BackButton from './backButton';
+import LegendButton from './legendButton';
 
 const First = () => {
     const { train, option } = useParams<{ train: string, option: string }>();
@@ -10,9 +12,7 @@ const First = () => {
             <IonContent>
             <div className='full-height'>
                 <div className="heading-first">
-                    <div className="train-number">
-                        <div >{train}</div>
-                    </div>
+                     <IonRouterLink className="train-number button" routerLink='/trains'>{train}</IonRouterLink>
                     <div className="title">
                         <div >HOMEPAGE</div>
                     </div>
@@ -41,13 +41,11 @@ const First = () => {
                         <div ><div>BU-6</div> </div>
                     </IonRouterLink>
                 </div>
-                <IonRouterLink routerLink='/legend' className="legendBtn">
-                    <div >LEGENDS</div>
-                </IonRouterLink>
+                <LegendButton />
                 </div>
             </IonContent>
             
-            
+        <BackButton />
         </IonPage>
     );
 }

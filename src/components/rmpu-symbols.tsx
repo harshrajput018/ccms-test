@@ -18,6 +18,7 @@ import D_CF from '../Images/Heater Not Ready.png';
 import D_CL from '../Images/heater.png';
 import airFilterClogged from '../Images/AirFilter_Clogged.png';
 import airFilter from '../Images/air-filter.png';
+import BackButton from './backButton';
 
 const SYMBOLS: React.FC = () => {
   const { id, option, train } = useParams<{ train: string, id: string, option: string }>();
@@ -40,7 +41,19 @@ const SYMBOLS: React.FC = () => {
       <IonContent>
         <div className='full-height'>
           <div className="heading-first">
-          <IonRouterLink className="train-number button" routerLink='/trains'>{train}</IonRouterLink>
+          <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {train || '22665'}
+</IonRouterLink>
             <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
           </div>
           <div className="heading-first">
@@ -67,6 +80,7 @@ const SYMBOLS: React.FC = () => {
           </div>
         </div>
       </IonContent>
+      <BackButton />
     </IonPage>
   );
 }

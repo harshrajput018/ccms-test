@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonPage } from '@ionic/react';
+import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
 
 import Doo_O_D from '../Images/Doo_O_D.png';
 import Door_Cl from '../Images/Door_Cl.png';
@@ -9,6 +9,7 @@ import door2 from '../Images/door-2.png';
 import Door_Comm_Failure from '../Images/Door_Comm_Failure.png';
 import Door_Emergency_Egress from '../Images/Door_E_E.png';
 import Door_Status_Unknown from '../Images/Door_U.png';
+import BackButton from './backButton';
 
 const DoorInfo: React.FC = () => {
 
@@ -68,9 +69,19 @@ const DoorInfo: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
-        <div className="train-number">
-          <div className="button">22665</div>
-        </div>
+        <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
         <div className="title">
           <div className="button">HOMEPAGE</div>
@@ -139,7 +150,7 @@ const DoorInfo: React.FC = () => {
         </div>
 
       </IonContent>
-
+    <BackButton />
     </IonPage>
   );
 };

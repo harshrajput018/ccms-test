@@ -1,6 +1,8 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonRouterLink } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import BackButton from './backButton';
+import LegendButton from './legendButton';
 
 interface Row {
     parameter: string;
@@ -106,7 +108,19 @@ const PARAMS: React.FC = () => {
                 <div className='full-height'>
                     <div className="heading-first">
 
-                        <IonRouterLink className="train-number button" routerLink='/trains'>{train}</IonRouterLink>
+                        <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {train || '22665'}
+</IonRouterLink>
 
                         <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
                     </div>
@@ -116,35 +130,137 @@ const PARAMS: React.FC = () => {
                             <div className="button">{myMap.get(`${id}0`)}</div>
                         </div>
                     </div>
-                    <div className="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>HVAC Unit</th>
-                                    <th>RMPU1</th>
-                                    <th>TIME</th>
-                                    <th>RMPU2</th>
-                                    <th>TIME</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data.map((row, index) => (
-                                    <tr key={index}>
-                                        <td style={{width:'20%'}}>{row.parameter}</td>
-                                        <td className={getClassName(row.RMPU1)}>{row.RMPU1}</td>
-                                        <td>{currentDateTime.time}</td>
-                                        <td className={getClassName(row.RMPU2)}>{row.RMPU2}</td>
-                                        <td>{currentDateTime.time}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    <Link to='/legend' className="legendBtn">
-                        <div style={{ position: 'fixed', bottom: '50px', right: '20px' }} className="button">LEGENDS</div>
-                    </Link>
+                    <div
+    className="table-container"
+    style={{
+        width: '100%',
+        overflow: 'hidden'
+    }}
+>
+    <table
+        style={{
+            width: '100%',
+            tableLayout: 'fixed',
+            borderCollapse: 'collapse'
+        }}
+    >
+        <thead>
+            <tr>
+                <th
+                    style={{
+                        width: '32%',
+                        padding: '3px',
+                        fontSize: '11px'
+                    }}
+                >
+                    HVAC Unit
+                </th>
+
+                <th
+                    style={{
+                        width: '17%',
+                        padding: '3px',
+                        fontSize: '11px'
+                    }}
+                >
+                    RMPU1
+                </th>
+
+                <th
+                    style={{
+                        width: '17%',
+                        padding: '3px',
+                        fontSize: '11px'
+                    }}
+                >
+                    TIME
+                </th>
+
+                <th
+                    style={{
+                        width: '17%',
+                        padding: '3px',
+                        fontSize: '11px'
+                    }}
+                >
+                    RMPU2
+                </th>
+
+                <th
+                    style={{
+                        width: '17%',
+                        padding: '3px',
+                        fontSize: '11px'
+                    }}
+                >
+                    TIME
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {data.map((row, index) => (
+                <tr key={index}>
+
+                    <td
+                        style={{
+                            width: '32%',
+                            padding: '3px',
+                            fontSize: '10px',
+                            wordBreak: 'break-word',
+                            whiteSpace: 'normal'
+                        }}
+                    >
+                        {row.parameter}
+                    </td>
+
+                    <td
+                        className={getClassName(row.RMPU1)}
+                        style={{
+                            padding: '3px',
+                            fontSize: '10px'
+                        }}
+                    >
+                        {row.RMPU1}
+                    </td>
+
+                    <td
+                        style={{
+                            padding: '3px',
+                            fontSize: '9px'
+                        }}
+                    >
+                        {currentDateTime.time.slice(0, 5)}
+                    </td>
+
+                    <td
+                        className={getClassName(row.RMPU2)}
+                        style={{
+                            padding: '3px',
+                            fontSize: '10px'
+                        }}
+                    >
+                        {row.RMPU2}
+                    </td>
+
+                    <td
+                        style={{
+                            padding: '3px',
+                            fontSize: '9px'
+                        }}
+                    >
+                        {currentDateTime.time.slice(0, 5)}
+                    </td>
+
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+                    <LegendButton />
                 </div>
             </IonContent>
+            <BackButton />
         </IonPage>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonPage } from '@ionic/react';
+import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
 
 import RMPU1_C_V_O from '../Images/RMPU1_C_V_O.png';
 import RMPU1_C_V_NR from '../Images/RMPU1_C_V_NR.png';
@@ -24,6 +24,7 @@ import RMPU2_B_V_NR from '../Images/RMPU2_B_V_NR.png';
 import RMPU2_B_V_R from '../Images/RMPU2_B_V_R.png';
 import RMPU2_B_V_F from '../Images/RMPU2_B_V_F.png';
 import RMPU2_B_V_U from '../Images/RMPU2_B_V_U.png';
+import BackButton from './backButton';
 
 const VFDIcon: React.FC = () => {
 
@@ -127,9 +128,19 @@ const VFDIcon: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
-        <div className="train-number">
-          <div className="button">22665</div>
-        </div>
+        <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
         <div className="title">
           <div className="button">HOMEPAGE</div>
@@ -200,7 +211,7 @@ const VFDIcon: React.FC = () => {
         </div>
 
       </IonContent>
-
+    <BackButton />
     </IonPage>
   );
 };

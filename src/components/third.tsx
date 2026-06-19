@@ -1,6 +1,8 @@
 import React from 'react';
 import { IonPage, IonContent, IonButton, IonRouterLink } from '@ionic/react';
 import { useParams } from 'react-router-dom';
+import BackButton from './backButton';
+import LegendButton from './legendButton';
 
 const Third: React.FC = () => {
   const { id,train, option } = useParams<{train:string, id: string, option: string }>();
@@ -19,7 +21,19 @@ const Third: React.FC = () => {
       <IonContent>
       <div className='full-height'>
         <div className="heading-first">
-          <div className="train-number"><div>{train}</div></div>
+          <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {train || '22665'}
+</IonRouterLink>
           <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
         </div>
         <div className="heading-first">
@@ -34,11 +48,10 @@ const Third: React.FC = () => {
             <div>RMPU Status-Parameters</div>
           </IonRouterLink>
         </div>
-        <IonRouterLink routerLink={'/legend'} className="legendBtn">
-          <div>LEGENDS</div>
-        </IonRouterLink>
+        <LegendButton />
         </div>
       </IonContent>
+      <BackButton />
     </IonPage>
   );
 }

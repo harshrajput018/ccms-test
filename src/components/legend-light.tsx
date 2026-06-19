@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, IonContent } from '@ionic/react';
+import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
 
 import PL1_M_OFF from '../Images/PL1_M_OFF.png';
 import PL1_OFF_DF from '../Images/PL1_OFF_DF.png';
@@ -10,6 +10,7 @@ import PL2_M_OFF from '../Images/PL2_M_OFF.png';
 import PL2_OFF_DF from '../Images/PL2_OFF_DF.png';
 import PL2_OFF from '../Images/PL2_OFF.png';
 import PL2_ON from '../Images/PL2_ON.png';
+import BackButton from './backButton';
 
 const Light: React.FC = () => {
 
@@ -55,9 +56,19 @@ const Light: React.FC = () => {
         <IonPage>
 
             <div className="heading-first">
-                <div className="train-number">
-                    <div className="button">22665</div>
-                </div>
+                <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
                 <div className="title">
                     <div className="button">HOMEPAGE</div>
@@ -128,7 +139,7 @@ const Light: React.FC = () => {
                 </div>
 
             </IonContent>
-
+        <BackButton />            
         </IonPage>
     );
 };

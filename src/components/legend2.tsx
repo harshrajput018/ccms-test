@@ -3,6 +3,7 @@ import {
     IonContent,
     IonRouterLink
 } from "@ionic/react";
+import BackButton from "./backButton";
 
 const EquipmentList = () => {
 
@@ -89,9 +90,19 @@ const EquipmentList = () => {
             <IonContent>
 
                 <div className="heading-first">
-                    <div className="train-number">
-                        <div>22665</div>
-                    </div>
+                    <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    22665
+</IonRouterLink>
 
                     <div className="title">
                         <div>HOMEPAGE</div>
@@ -157,6 +168,7 @@ const EquipmentList = () => {
                 </div>
 
             </IonContent>
+        <BackButton />
         </IonPage>
     );
 };

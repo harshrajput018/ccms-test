@@ -1,4 +1,4 @@
-import { IonPage, IonContent } from "@ionic/react";
+import { IonPage, IonContent, IonRouterLink } from "@ionic/react";
 
 import Fire_D_T1 from "../Images/Fire_D_T1.png";
 import Fire_D_P1 from "../Images/Fire_D_P1.png";
@@ -9,6 +9,7 @@ import Fire_D_Action from "../Images/Fire_D_Action.png";
 import Fire_D_SF from "../Images/Fire_D_SF.png";
 import Fire_CF_TCMS from "../Images/Fire_CF_TCMS.png";
 import Fire_N_D from "../Images/Fire_N_D.png";
+import BackButton from "./backButton";
 
 const Fire = () => {
 
@@ -69,9 +70,19 @@ const Fire = () => {
                 <div className="full-height">
 
                     <div className="heading-first">
-                        <div className="train-number">
-                            <div className="button">22665</div>
-                        </div>
+                        <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
                         <div className="title">
                             <div className="button">HOMEPAGE</div>
@@ -142,7 +153,7 @@ const Fire = () => {
                 </div>
 
             </IonContent>
-
+        <BackButton />                
         </IonPage>
     );
 };

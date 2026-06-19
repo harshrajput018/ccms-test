@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonPage } from '@ionic/react';
+import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
 
 import RMPU1_C_F_O from '../Images/RMPU1_C_F_O.png';
 import RMPU1_C_F_R from '../Images/RMPU1_C_F_R.png';
@@ -16,6 +16,7 @@ import RMPU2_C_F_NR from '../Images/RMPU2_C_F1_NR.png';
 import RMPU2_C_F2_O from '../Images/RMPU2_C_F_O.png';
 import RMPU2_C_F2_R from '../Images/RMPU2_C_F_R.png';
 import RMPU2_C_F2_NR from '../Images/RMPU2_C_F_NR.png';
+import BackButton from './backButton';
 
 const CondenserLegendInfo: React.FC = () => {
 
@@ -91,9 +92,19 @@ const CondenserLegendInfo: React.FC = () => {
         <div className="full-height">
 
           <div className="heading-first">
-            <div className="train-number">
-              <div className="button">22665</div>
-            </div>
+            <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
             <div className="title">
               <div className="button">HOMEPAGE</div>
@@ -164,7 +175,7 @@ const CondenserLegendInfo: React.FC = () => {
         </div>
 
       </IonContent>
-
+    <BackButton />
     </IonPage>
   );
 };

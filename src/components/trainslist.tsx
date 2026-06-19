@@ -1,5 +1,6 @@
 import React from 'react';
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonRouterLink, IonPage, IonContent } from '@ionic/react';
+import BackButton from './backButton';
 
 const Trains: React.FC = () => {
     return (
@@ -26,6 +27,7 @@ const Trains: React.FC = () => {
         </IonCard>
         </div>
         </IonContent>
+        <BackButton />
         </IonPage>
 
     );

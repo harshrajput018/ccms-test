@@ -1,9 +1,10 @@
 import React from 'react';
-import { IonPage, IonContent } from '@ionic/react';
+import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
 
 import uvLampOff from '../Images/UV Lamp Off.png';
 import uvLampOn from '../Images/UV Lamp ON.png';
 import uvLampMCBTripped from '../Images/UV Lamp_ MCB_T.png';
+import BackButton from './backButton';
 
 const Lamp: React.FC = () => {
 
@@ -30,9 +31,19 @@ const Lamp: React.FC = () => {
         <IonPage>
 
             <div className="heading-first">
-                <div className="train-number">
-                    <div className="button">22665</div>
-                </div>
+                <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
                 <div className="title">
                     <div className="button">HOMEPAGE</div>
@@ -103,7 +114,7 @@ const Lamp: React.FC = () => {
                 </div>
 
             </IonContent>
-
+        <BackButton />            
         </IonPage>
     );
 };

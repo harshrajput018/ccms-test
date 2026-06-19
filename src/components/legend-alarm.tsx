@@ -1,10 +1,11 @@
 import React from 'react';
-import { IonPage, IonContent } from '@ionic/react';
+import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
 
 import alarmOK from '../Images/PassAlarm_OK.png';
 import alarmMCBOff from '../Images/PassAlarm_MCBOFF.png';
 import alarmTriggered from '../Images/PassAlarm_Trigerred.png';
 import alarmUnknown from '../Images/PassAlarm_Unknown.png';
+import BackButton from './backButton';
 
 const Alarm: React.FC = () => {
 
@@ -36,9 +37,19 @@ const Alarm: React.FC = () => {
         <IonPage>
 
             <div className="heading-first">
-                <div className="train-number">
-                    <div className="button">22665</div>
-                </div>
+                <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
                 <div className="title">
                     <div className="button">HOMEPAGE</div>
@@ -109,7 +120,7 @@ const Alarm: React.FC = () => {
                 </div>
 
             </IonContent>
-
+        <BackButton />            
         </IonPage>
     );
 };

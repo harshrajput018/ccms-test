@@ -1,10 +1,11 @@
 import React from 'react';
-import { IonPage, IonContent } from '@ionic/react';
+import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
 
 import heaterReady from '../Images/Heater Ready.png';
 import heaterNotReady from '../Images/Heater Not Ready.png';
 import heaterOn from '../Images/Heater On.png';
 import heaterFault from '../Images/Heater_Faulty.png';
+import BackButton from './backButton';
 
 const Heater: React.FC = () => {
 
@@ -36,9 +37,19 @@ const Heater: React.FC = () => {
         <IonPage>
 
             <div className="heading-first">
-                <div className="train-number">
-                    <div className="button">22665</div>
-                </div>
+                <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
                 <div className="title">
                     <div className="button">HOMEPAGE</div>
@@ -109,7 +120,7 @@ const Heater: React.FC = () => {
                 </div>
 
             </IonContent>
-
+        <BackButton />            
         </IonPage>
     );
 };

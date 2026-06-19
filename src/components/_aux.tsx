@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonPage } from '@ionic/react';
+import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
 
 import AC_R_O from '../Images/AC_R_O.png';
 import AC_NR_O from '../Images/AC_NR_O.png';
@@ -14,6 +14,7 @@ import AC2_E from '../Images/AC2_E.png';
 import AC2_N_E from '../Images/AC2_N_E.png';
 import AC2_V_C from '../Images/AC2_V_C.png';
 import AC2_S_U from '../Images/AC2_S_U.png';
+import BackButton from './backButton';
 
 const AuxConverterInfo: React.FC = () => {
 
@@ -85,9 +86,19 @@ const AuxConverterInfo: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
-        <div className="train-number">
-          <div className="button">22665</div>
-        </div>
+        <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
         <div className="title">
           <div className="button">HOMEPAGE</div>
@@ -156,7 +167,7 @@ const AuxConverterInfo: React.FC = () => {
         </div>
 
       </IonContent>
-
+      <BackButton />
     </IonPage>
   );
 };

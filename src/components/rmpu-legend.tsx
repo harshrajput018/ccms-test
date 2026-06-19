@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonPage } from '@ionic/react';
+import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
 
 import RMPU_R from '../Images/RMPU_R.png';
 import RMPU_B_R from '../Images/RMPU_B_R.png';
@@ -9,6 +9,7 @@ import RMPU1_D_S from '../Images/RMPU1_D_S.png';
 import RMPU2_D_S from '../Images/RMPU2_D_S.png';
 
 import defaultIcon from '../Images/RM_RM.png';
+import BackButton from './backButton';
 
 const RMPULegendInfo: React.FC = () => {
 
@@ -80,9 +81,19 @@ const RMPULegendInfo: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
-        <div className="train-number">
-          <div className="button">22665</div>
-        </div>
+        <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
         <div className="title">
           <div className="button">HOMEPAGE</div>
@@ -151,7 +162,7 @@ const RMPULegendInfo: React.FC = () => {
         </div>
 
       </IonContent>
-
+    <BackButton />      
     </IonPage>
   );
 };

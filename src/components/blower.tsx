@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonContent, IonPage } from '@ionic/react';
+import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
 
 import blower1 from '../Images/RMPU1_BL_EMY.png';
 import blower2 from '../Images/RMPU1_BL_O.png';
@@ -12,6 +12,7 @@ import blower7 from '../Images/RMPU2_BL_O.png';
 import blower8 from '../Images/RMPU2_BL_R.png';
 import blower9 from '../Images/RMPU2_BL_NR.png';
 import blower10 from '../Images/RMPU2_BL_U.png';
+import BackButton from './backButton';
 
 const BlowerInfo: React.FC = () => {
 
@@ -77,9 +78,19 @@ const BlowerInfo: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
-        <div className="train-number">
-          <div className="button">22665</div>
-        </div>
+        <IonRouterLink
+    routerLink="/trains"
+    className="train-number"
+    style={{
+        textDecoration: 'none',
+        color: 'yellow',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }}
+>
+    {'22665'}
+</IonRouterLink>
 
         <div className="title">
           <div className="button">HOMEPAGE</div>
@@ -149,6 +160,7 @@ const BlowerInfo: React.FC = () => {
 
       </IonContent>
 
+    <BackButton />
     </IonPage>
   );
 };
