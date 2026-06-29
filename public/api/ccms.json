@@ -1,0 +1,79 @@
+{
+  "rmpu1Mode": 7,
+  "rmpu2Mode": 1,
+
+  "airCo1": 1,
+  "airCo2": 0,
+
+  "blower1": 1,
+  "blower2": 1,
+
+  "blowerVfd1": 0,
+  "blowerVfd2": 1,
+
+  "compressor1_1": 1,
+  "compressor1_2": 0,
+
+  "compressor2_1": 1,
+  "compressor2_2": 0,
+
+  "compressorVfd1": 1,
+  "compressorVfd2": 0,
+
+  "condenserFan1_1": 1,
+  "condenserFan1_2": 0,
+
+  "controlPressure1": 0,
+  "controlPressure2": 0,
+
+  "freshAirDamper1_1": 1,
+  "freshAirDamper1_2": 0,
+
+  "freshAirDamper2_1": 1,
+  "freshAirDamper2_2": 0,
+
+  "uvLamp1": 0,
+  "uvLamp2": 1,
+
+  "returnDamper1_1": 1,
+  "returnDamper1_2": 0,
+
+  "heater1": 1,
+  "heater2": 1,
+
+  "hvacFault1": 1,
+  "hvacFault2": 0,
+
+  "rhActivation1": 1,
+  "rhActivation2": 1,
+
+  "internalTemp1": 24,
+  "internalTemp2": 32,
+
+  "ambientTemp1": 34,
+  "ambientTemp2": 38,
+
+  "diffPressure1": 1,
+  "diffPressure2": 1,
+
+  "lp1Pressure1": 0,
+  "lp1Pressure2": 0,
+
+  "lp2Pressure1": 0,
+  "lp2Pressure2": 1,
+
+  "hp1Pressure1": 1,
+  "hp1Pressure2": 0,
+
+  "hp2Pressure1": 1,
+  "hp2Pressure2": 1,
+
+  "ac400v1": 0,
+  "ac400v2": 0,
+
+  "cloggingFilter1": 0,
+  "cloggingFilter2": 1,
+
+  "setPoint1": 25,
+  "setPoint2": 25
+}

@@ -1,12 +1,17 @@
 import React from 'react';
-import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
+import { useParams } from 'react-router-dom';
+import { IonPage, IonContent, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 
 import uvLampOff from '../Images/UV Lamp Off.png';
 import uvLampOn from '../Images/UV Lamp ON.png';
 import uvLampMCBTripped from '../Images/UV Lamp_ MCB_T.png';
+
 import BackButton from './backButton';
 
 const Lamp: React.FC = () => {
+
+    const { train } = useParams<{ train: string }>();
 
     const uvLampStates = [
 
@@ -31,26 +36,49 @@ const Lamp: React.FC = () => {
         <IonPage>
 
             <div className="heading-first">
+
                 <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    {'22665'}
-</IonRouterLink>
+                    routerLink={`/${train}/legend`}
+                    className="train-number"
+                    style={{
+                        textDecoration: 'none',
+                        color: 'yellow',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    LEGENDS
+                </IonRouterLink>
 
                 <div className="title">
-                    <div className="button">HOMEPAGE</div>
+
+                    <IonRouterLink
+                        routerLink={`/trains`}
+                        className="title"
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            textDecoration: "none",
+                            color: "inherit"
+                        }}
+                    >
+                        <IonIcon
+                            icon={home}
+                            style={{
+                                fontSize: "30px",
+                                color: "white"
+                            }}
+                        />
+                    </IonRouterLink>
+
                 </div>
+
             </div>
 
             <div className="heading-first">
+
                 <div className="train-number title">
                     <div className="button">
                         UV LAMP LEGEND INFORMATION
@@ -60,6 +88,7 @@ const Lamp: React.FC = () => {
                 <div className="title">
                     <div className="button"></div>
                 </div>
+
             </div>
 
             <IonContent>
@@ -114,7 +143,9 @@ const Lamp: React.FC = () => {
                 </div>
 
             </IonContent>
-        <BackButton />            
+
+            <BackButton />
+
         </IonPage>
     );
 };

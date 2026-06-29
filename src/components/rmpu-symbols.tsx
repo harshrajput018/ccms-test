@@ -1,4 +1,5 @@
-import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
+import { IonPage, IonContent, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 import { useParams } from 'react-router-dom';
 import spare from '../Images/spare.png'
 import AlarmOk from '../Images/Alarm_Ok.png';
@@ -54,7 +55,25 @@ const SYMBOLS: React.FC = () => {
 >
     {train || '22665'}
 </IonRouterLink>
-            <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
+           <IonRouterLink
+    routerLink={`/trains`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
           </div>
           <div className="heading-first">
           <IonRouterLink routerLink={`/${train}/second/${id}`} className="train-number title">{id.slice(0, 2) + id.slice(3)}-{option}</IonRouterLink>

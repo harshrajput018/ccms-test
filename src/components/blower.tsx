@@ -1,5 +1,7 @@
 import React from 'react';
-import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
+import { useParams } from 'react-router-dom';
+import { IonContent, IonPage, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 
 import blower1 from '../Images/RMPU1_BL_EMY.png';
 import blower2 from '../Images/RMPU1_BL_O.png';
@@ -12,9 +14,12 @@ import blower7 from '../Images/RMPU2_BL_O.png';
 import blower8 from '../Images/RMPU2_BL_R.png';
 import blower9 from '../Images/RMPU2_BL_NR.png';
 import blower10 from '../Images/RMPU2_BL_U.png';
+
 import BackButton from './backButton';
 
 const BlowerInfo: React.FC = () => {
+
+  const { train } = useParams<{ train: string }>();
 
   const blowerInfo = [
 
@@ -78,23 +83,45 @@ const BlowerInfo: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
+
         <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    {'22665'}
-</IonRouterLink>
+          routerLink={`/${train}/legend`}
+          className="train-number"
+          style={{
+            textDecoration: 'none',
+            color: 'yellow',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          LEGENDS
+        </IonRouterLink>
 
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+
+          <IonRouterLink
+            routerLink={`/trains`}
+            className="title"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              textDecoration: "none",
+              color: "inherit"
+            }}
+          >
+            <IonIcon
+              icon={home}
+              style={{
+                fontSize: "30px",
+                color: "white"
+              }}
+            />
+          </IonRouterLink>
+
         </div>
+
       </div>
 
       <div className="heading-first">
@@ -160,7 +187,8 @@ const BlowerInfo: React.FC = () => {
 
       </IonContent>
 
-    <BackButton />
+      <BackButton />
+
     </IonPage>
   );
 };

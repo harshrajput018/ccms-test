@@ -1,11 +1,16 @@
 import React from 'react';
-import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
+import { useParams } from 'react-router-dom';
+import { IonPage, IonContent, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 
 import damperOpen from '../Images/FreshAirDamper_Open.png';
 import damperClosed from '../Images/FreshAirDamper_Close.png';
+
 import BackButton from './backButton';
 
 const AirDamper: React.FC = () => {
+
+    const { train } = useParams<{ train: string }>();
 
     const freshAirDamperStates = [
 
@@ -25,26 +30,49 @@ const AirDamper: React.FC = () => {
         <IonPage>
 
             <div className="heading-first">
+
                 <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    {'22665'}
-</IonRouterLink>
+                    routerLink={`/${train}/legend`}
+                    className="train-number"
+                    style={{
+                        textDecoration: 'none',
+                        color: 'yellow',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    LEGENDS
+                </IonRouterLink>
 
                 <div className="title">
-                    <div className="button">HOMEPAGE</div>
+
+                    <IonRouterLink
+                        routerLink={`trains`}
+                        className="title"
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            textDecoration: "none",
+                            color: "inherit"
+                        }}
+                    >
+                        <IonIcon
+                            icon={home}
+                            style={{
+                                fontSize: "30px",
+                                color: "white"
+                            }}
+                        />
+                    </IonRouterLink>
+
                 </div>
+
             </div>
 
             <div className="heading-first">
+
                 <div className="train-number title">
                     <div className="button">
                         FRESH AIR DAMPER LEGEND INFORMATION
@@ -54,6 +82,7 @@ const AirDamper: React.FC = () => {
                 <div className="title">
                     <div className="button"></div>
                 </div>
+
             </div>
 
             <IonContent>
@@ -108,7 +137,9 @@ const AirDamper: React.FC = () => {
                 </div>
 
             </IonContent>
-        <BackButton />               
+
+            <BackButton />
+
         </IonPage>
     );
 };

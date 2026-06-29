@@ -1,5 +1,7 @@
 import React from 'react';
-import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
+import { useParams } from 'react-router-dom';
+import { IonContent, IonPage, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 
 import RMPU1_C_V_O from '../Images/RMPU1_C_V_O.png';
 import RMPU1_C_V_NR from '../Images/RMPU1_C_V_NR.png';
@@ -24,9 +26,12 @@ import RMPU2_B_V_NR from '../Images/RMPU2_B_V_NR.png';
 import RMPU2_B_V_R from '../Images/RMPU2_B_V_R.png';
 import RMPU2_B_V_F from '../Images/RMPU2_B_V_F.png';
 import RMPU2_B_V_U from '../Images/RMPU2_B_V_U.png';
+
 import BackButton from './backButton';
 
 const VFDIcon: React.FC = () => {
+
+  const { train } = useParams<{ train: string }>();
 
   const vfdStatuses = [
 
@@ -128,26 +133,49 @@ const VFDIcon: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
+
         <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    {'22665'}
-</IonRouterLink>
+          routerLink={`/${train}/legend`}
+          className="train-number"
+          style={{
+            textDecoration: 'none',
+            color: 'yellow',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          LEGENDS
+        </IonRouterLink>
 
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+
+          <IonRouterLink
+            routerLink={`/trains`}
+            className="title"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              textDecoration: "none",
+              color: "inherit"
+            }}
+          >
+            <IonIcon
+              icon={home}
+              style={{
+                fontSize: "30px",
+                color: "white"
+              }}
+            />
+          </IonRouterLink>
+
         </div>
+
       </div>
 
       <div className="heading-first">
+
         <div className="train-number title">
           <div className="button">
             VFD LEGEND INFORMATION
@@ -157,6 +185,7 @@ const VFDIcon: React.FC = () => {
         <div className="title">
           <div className="button"></div>
         </div>
+
       </div>
 
       <IonContent>
@@ -211,7 +240,9 @@ const VFDIcon: React.FC = () => {
         </div>
 
       </IonContent>
-    <BackButton />
+
+      <BackButton />
+
     </IonPage>
   );
 };

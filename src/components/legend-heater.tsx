@@ -1,13 +1,18 @@
 import React from 'react';
-import { IonPage, IonContent, IonRouterLink } from '@ionic/react';
+import { useParams } from 'react-router-dom';
+import { IonPage, IonContent, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 
 import heaterReady from '../Images/Heater Ready.png';
 import heaterNotReady from '../Images/Heater Not Ready.png';
 import heaterOn from '../Images/Heater On.png';
 import heaterFault from '../Images/Heater_Faulty.png';
+
 import BackButton from './backButton';
 
 const Heater: React.FC = () => {
+
+    const { train } = useParams<{ train: string }>();
 
     const heaterStates = [
 
@@ -37,26 +42,49 @@ const Heater: React.FC = () => {
         <IonPage>
 
             <div className="heading-first">
+
                 <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    {'22665'}
-</IonRouterLink>
+                    routerLink={`/${train}/legend`}
+                    className="train-number"
+                    style={{
+                        textDecoration: 'none',
+                        color: 'yellow',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    LEGENDS
+                </IonRouterLink>
 
                 <div className="title">
-                    <div className="button">HOMEPAGE</div>
+
+                    <IonRouterLink
+                        routerLink={`/trains`}
+                        className="title"
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            textDecoration: "none",
+                            color: "inherit"
+                        }}
+                    >
+                        <IonIcon
+                            icon={home}
+                            style={{
+                                fontSize: "30px",
+                                color: "white"
+                            }}
+                        />
+                    </IonRouterLink>
+
                 </div>
+
             </div>
 
             <div className="heading-first">
+
                 <div className="train-number title">
                     <div className="button">
                         HEATER LEGEND INFORMATION
@@ -66,6 +94,7 @@ const Heater: React.FC = () => {
                 <div className="title">
                     <div className="button"></div>
                 </div>
+
             </div>
 
             <IonContent>
@@ -120,7 +149,9 @@ const Heater: React.FC = () => {
                 </div>
 
             </IonContent>
-        <BackButton />            
+
+            <BackButton />
+
         </IonPage>
     );
 };

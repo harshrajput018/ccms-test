@@ -1,5 +1,7 @@
 import React from 'react';
-import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
+import { useParams } from 'react-router-dom';
+import { IonContent, IonPage, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 
 import RMPU1_S_D from '../Images/RMPU1_S_D.png';
 import RMPU1_S_A from '../Images/RMPU1_S_A.png';
@@ -8,9 +10,12 @@ import RMPU1_S_U from '../Images/RMPU1_S_U.png';
 import RMPU2_S_D from '../Images/RMPU2_S_D.png';
 import RMPU2_S_A from '../Images/RMPU2_S_A.png';
 import RMPU2_S_U from '../Images/RMPU2_S_U.png';
+
 import BackButton from './backButton';
 
 const SmokeInfo: React.FC = () => {
+
+  const { train } = useParams<{ train: string }>();
 
   const smokeInfo = [
 
@@ -54,26 +59,49 @@ const SmokeInfo: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
+
         <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    {'22665'}
-</IonRouterLink>
+          routerLink={`/${train}/legend`}
+          className="train-number"
+          style={{
+            textDecoration: 'none',
+            color: 'yellow',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          LEGENDS
+        </IonRouterLink>
 
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+
+          <IonRouterLink
+            routerLink={`/trains`}
+            className="title"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              textDecoration: "none",
+              color: "inherit"
+            }}
+          >
+            <IonIcon
+              icon={home}
+              style={{
+                fontSize: "30px",
+                color: "white"
+              }}
+            />
+          </IonRouterLink>
+
         </div>
+
       </div>
 
       <div className="heading-first">
+
         <div className="train-number title">
           <div className="button">
             HVAC SMOKE LEGEND INFORMATION
@@ -83,6 +111,7 @@ const SmokeInfo: React.FC = () => {
         <div className="title">
           <div className="button"></div>
         </div>
+
       </div>
 
       <IonContent>
@@ -137,7 +166,9 @@ const SmokeInfo: React.FC = () => {
         </div>
 
       </IonContent>
-    <BackButton />
+
+      <BackButton />
+
     </IonPage>
   );
 };

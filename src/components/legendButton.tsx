@@ -1,16 +1,17 @@
 import React from 'react';
 import { IonIcon } from '@ionic/react';
 import { list } from 'ionicons/icons';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 const LegendButton: React.FC = () => {
 
     const history = useHistory();
+    const { train } = useParams<{ train: string }>();
 
     return (
 
         <div
-            onClick={() => history.push('/legend')}
+            onClick={() => history.push(`/${train}/legend`)}
             style={{
                 position: 'fixed',
                 bottom: '15px',

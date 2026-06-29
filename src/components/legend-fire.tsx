@@ -1,4 +1,6 @@
-import { IonPage, IonContent, IonRouterLink } from "@ionic/react";
+import { useParams } from 'react-router-dom';
+import { IonPage, IonContent, IonRouterLink, IonIcon } from "@ionic/react";
+import { home } from 'ionicons/icons';
 
 import Fire_D_T1 from "../Images/Fire_D_T1.png";
 import Fire_D_P1 from "../Images/Fire_D_P1.png";
@@ -9,9 +11,12 @@ import Fire_D_Action from "../Images/Fire_D_Action.png";
 import Fire_D_SF from "../Images/Fire_D_SF.png";
 import Fire_CF_TCMS from "../Images/Fire_CF_TCMS.png";
 import Fire_N_D from "../Images/Fire_N_D.png";
+
 import BackButton from "./backButton";
 
 const Fire = () => {
+
+    const { train } = useParams<{ train: string }>();
 
     const fireLegendStates = [
 
@@ -70,26 +75,49 @@ const Fire = () => {
                 <div className="full-height">
 
                     <div className="heading-first">
+
                         <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    {'22665'}
-</IonRouterLink>
+                            routerLink={`/${train}/legend`}
+                            className="train-number"
+                            style={{
+                                textDecoration: 'none',
+                                color: 'yellow',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}
+                        >
+                            LEGENDS
+                        </IonRouterLink>
 
                         <div className="title">
-                            <div className="button">HOMEPAGE</div>
+
+                            <IonRouterLink
+                                routerLink={`/trains`}
+                                className="title"
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    textDecoration: "none",
+                                    color: "inherit"
+                                }}
+                            >
+                                <IonIcon
+                                    icon={home}
+                                    style={{
+                                        fontSize: "30px",
+                                        color: "white"
+                                    }}
+                                />
+                            </IonRouterLink>
+
                         </div>
+
                     </div>
 
                     <div className="heading-first">
+
                         <div className="train-number title">
                             <div className="button">
                                 FDS FIRE LEGEND INFORMATION
@@ -99,6 +127,7 @@ const Fire = () => {
                         <div className="title">
                             <div className="button"></div>
                         </div>
+
                     </div>
 
                     <div className="equipment-list">
@@ -153,7 +182,9 @@ const Fire = () => {
                 </div>
 
             </IonContent>
-        <BackButton />                
+
+            <BackButton />
+
         </IonPage>
     );
 };

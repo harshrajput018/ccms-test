@@ -15454,7 +15454,25 @@ const AuxConverterInfo: React.FC = () => {
           <div className="button">22665</div>
         </div>
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+          <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
         </div>
       </div>
       <div className="heading-first">
@@ -15520,7 +15538,25 @@ const BlowerInfo: React.FC = () => {
           <div className="button">22665</div>
         </div>
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+          <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
         </div>
       </div>
       <div className="heading-first">
@@ -15613,7 +15649,7 @@ export default CondenserLegendInfo;
 FILE : ./src/components/first.tsx
 ########################################################################################################################
 
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonRouterLink } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton,IonIcon, IonRouterLink } from '@ionic/react';
 import { Link, useParams } from 'react-router-dom';
 import './ExploreContainer.css'; // Make sure to keep the CSS file the same
 
@@ -15675,7 +15711,7 @@ export default First;
 FILE : ./src/components/legend-airdamper.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const AirDamper = () => {
     const freshAirDamperStates = [
         { icon: 'fresh-air-damper.png', description: 'Fresh Air Damper Open.', color: 'white' },
@@ -15721,7 +15757,7 @@ export default AirDamper;
 FILE : ./src/components/legend-airfilter.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const Filter = () => {
     const filterStatusStates = [
         { icon: 'air-filter.png', description: 'Air Filter is Clear.', color: 'white' },
@@ -15767,7 +15803,7 @@ export default Filter;
 FILE : ./src/components/legend-alarm.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const Alarm = () => {
     const passengerAlarmStates = [
         { icon: 'Alarm_Uknown.png', description: 'Passenger Alarm Circuit is OK (Ready for operation).', color: 'lightgray' },
@@ -15815,7 +15851,7 @@ export default Alarm;
 FILE : ./src/components/legend-compressor.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const Compressor = () => {
     const compressorStates = [
         { icon: 'C1.png', description: 'RMPU Compressor 1 ON.', color: 'lightblue' },
@@ -15880,7 +15916,7 @@ export default Door;
 FILE : ./src/components/legend-fire.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const Fire = () => {
     const fireLegendStates = [
         { icon: 'FDSFireDetected.png', description: 'Fire Detected.', color: 'red' },
@@ -15930,7 +15966,7 @@ export default Fire;
 FILE : ./src/components/legend-heater.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const Heater = () => {
     const heaterStates = [
         { icon: 'heater.png', description: 'Heater Ready.', color: 'lightgray' },
@@ -15978,7 +16014,7 @@ export default Heater;
 FILE : ./src/components/legend-light.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const Light = () => {
     const passengerLightStates = [
         { icon: 'bulb_OffDriver.png', description: 'Passenger Light Ready for Operation.', color: 'white' },
@@ -16028,7 +16064,7 @@ export default Light;
 FILE : ./src/components/legend-uvlamp.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const Lamp = () => {
     const uvLampStates = [
         { icon: 'uv-lamp.png', description: 'UV Lamp OFF.', color: 'gray' },
@@ -16074,7 +16110,7 @@ export default Lamp;
 FILE : ./src/components/legend2.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 const EquipmentList = () => {
     const items = [
         { icon: 'auxiliary-converter.png', name: 'Auxiliary Converter', link:'/legend-aux'},
@@ -16129,7 +16165,7 @@ export default EquipmentList;
 FILE : ./src/components/legends.tsx
 ########################################################################################################################
 
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
+import { IonPage, IonContent, IonButton,IonIcon, IonImg, IonRouterLink } from "@ionic/react";
 import { Link } from "react-router-dom";
 import "../components/ExploreContainer.css"; // Assuming you have your styles here
 import acNotImg from '../Images/Ac not.png';
@@ -16435,7 +16471,25 @@ const RMPULegendInfo: React.FC = () => {
           <div className="button">22665</div>
         </div>
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+          <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
         </div>
       </div>
       <div className="heading-first">
@@ -16491,7 +16545,7 @@ export default RMPULegendInfo;
 FILE : ./src/components/rmpu-params.tsx
 ########################################################################################################################
 
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonRouterLink } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton,IonIcon, IonRouterLink } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
@@ -16601,7 +16655,25 @@ const PARAMS: React.FC = () => {
 
                         <IonRouterLink className="train-number button" routerLink='/trains'>{train}</IonRouterLink>
 
-                        <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
+                       <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
                     </div>
                     <div className="heading-first">
                         <IonRouterLink routerLink={`/${train}/second/${id}`} className="train-number title">{id.slice(0, 2) + id.slice(3)}-{option}</IonRouterLink>
@@ -16693,7 +16765,25 @@ const SYMBOLS: React.FC = () => {
         <div className='full-height'>
           <div className="heading-first">
           <IonRouterLink className="train-number button" routerLink='/trains'>{train}</IonRouterLink>
-            <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
+           <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
           </div>
           <div className="heading-first">
           <IonRouterLink routerLink={`/${train}/second/${id}`} className="train-number title">{id.slice(0, 2) + id.slice(3)}-{option}</IonRouterLink>
@@ -16766,7 +16856,25 @@ const Second: React.FC = () => {
         <div className='full-height'>
           <div className="heading-first">
             <div className="train-number"><div>{train}</div></div>
-            <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
+           <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
           </div>
           <div className="heading-first">
             <IonRouterLink routerLink={`/${train}/home`} className="train-number title">{id}</IonRouterLink>
@@ -16815,7 +16923,25 @@ const SmokeInfo: React.FC = () => {
           <div className="button">22665</div>
         </div>
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+          <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
         </div>
       </div>
       <div className="heading-first">
@@ -16851,7 +16977,7 @@ FILE : ./src/components/third.tsx
 ########################################################################################################################
 
 import React from 'react';
-import { IonPage, IonContent, IonButton, IonRouterLink } from '@ionic/react';
+import { IonPage, IonContent, IonButton,IonIcon, IonRouterLink } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 
 const Third: React.FC = () => {
@@ -16872,7 +16998,25 @@ const Third: React.FC = () => {
       <div className='full-height'>
         <div className="heading-first">
           <div className="train-number"><div>{train}</div></div>
-          <IonRouterLink routerLink={`/${train}/home`} className="title"><div>HOMEPAGE</div></IonRouterLink>
+         <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
         </div>
         <div className="heading-first">
           <IonRouterLink routerLink={`/${train}/second/${id}`} className="train-number title">{id.slice(0, 2) + id.slice(3)}-{option}</IonRouterLink>
@@ -16980,7 +17124,25 @@ const VFDIcon: React.FC = () => {
           <div className="button">22665</div>
         </div>
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+          <IonRouterLink
+    routerLink={`/${train}/home`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
         </div>
       </div>
       <div className="heading-first">

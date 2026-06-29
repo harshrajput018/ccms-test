@@ -1,5 +1,6 @@
 import React from 'react';
-import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonRouterLink, IonPage, IonContent } from '@ionic/react';
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonRouterLink, IonPage, IonContent, IonIcon } from '@ionic/react';
+import { home, trendingUpOutline } from 'ionicons/icons';
 import BackButton from './backButton';
 
 const Trains: React.FC = () => {
@@ -27,7 +28,7 @@ const Trains: React.FC = () => {
         </IonCard>
         </div>
         </IonContent>
-        <BackButton />
+        <BackButton logout = {true}/>
         </IonPage>
 
     );

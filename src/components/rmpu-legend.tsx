@@ -1,5 +1,7 @@
 import React from 'react';
-import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
+import { useParams } from 'react-router-dom';
+import { IonContent, IonPage, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 
 import RMPU_R from '../Images/RMPU_R.png';
 import RMPU_B_R from '../Images/RMPU_B_R.png';
@@ -12,6 +14,8 @@ import defaultIcon from '../Images/RM_RM.png';
 import BackButton from './backButton';
 
 const RMPULegendInfo: React.FC = () => {
+
+  const { train } = useParams<{ train: string }>();
 
   const rmpuLegend = [
 
@@ -81,26 +85,49 @@ const RMPULegendInfo: React.FC = () => {
     <IonPage>
 
       <div className="heading-first">
+
         <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    {'22665'}
-</IonRouterLink>
+          routerLink={`/${train}/legend`}
+          className="train-number"
+          style={{
+            textDecoration: 'none',
+            color: 'yellow',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          LEGENDS
+        </IonRouterLink>
 
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+
+          <IonRouterLink
+            routerLink={`/trains`}
+            className="title"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              textDecoration: "none",
+              color: "inherit"
+            }}
+          >
+            <IonIcon
+              icon={home}
+              style={{
+                fontSize: "30px",
+                color: "white"
+              }}
+            />
+          </IonRouterLink>
+
         </div>
+
       </div>
 
       <div className="heading-first">
+
         <div className="train-number title">
           <div className="button">
             RMPU LEGEND INFORMATION
@@ -110,6 +137,7 @@ const RMPULegendInfo: React.FC = () => {
         <div className="title">
           <div className="button"></div>
         </div>
+
       </div>
 
       <IonContent>
@@ -139,6 +167,7 @@ const RMPULegendInfo: React.FC = () => {
                   padding: 0
                 }}
               >
+
                 <img
                   src={item.img}
                   alt="icon"
@@ -149,6 +178,7 @@ const RMPULegendInfo: React.FC = () => {
                     display: "block"
                   }}
                 />
+
               </div>
 
               <div className="name">
@@ -162,7 +192,9 @@ const RMPULegendInfo: React.FC = () => {
         </div>
 
       </IonContent>
-    <BackButton />      
+
+      <BackButton />
+
     </IonPage>
   );
 };

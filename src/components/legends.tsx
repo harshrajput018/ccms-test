@@ -1,28 +1,43 @@
-import { IonPage, IonContent, IonButton, IonImg, IonRouterLink } from "@ionic/react";
-import { Link } from "react-router-dom";
-import "../components/ExploreContainer.css"; // Assuming you have your styles here
+import {
+  IonPage,
+  IonContent,
+  IonImg,
+  IonRouterLink
+} from "@ionic/react";
+
+import "../components/ExploreContainer.css";
+
 import acNotImg from '../Images/Ac not.png';
 import rmRmImg from '../Images/RM_RM.png';
-import doorCommFailureImg from '../Images/Door_Comm_Failure.png';
 import blowerImg from '../Images/Blower.png';
 import condenserImg from '../Images/Condensor2.png';
-import fdsFireImg from '../Images/FDSFire.png';
 import rmpsSmokeImg from '../Images/RMPSmoke1.png';
 import vfdReadyImg from '../Images/VFDReady.png';
-import bulbRImg from '../Images/bulb_R.png';
-import alarmOkImg from '../Images/Alarm_Ok.png';
 
 const Legend: React.FC = () => {
+
   return (
     <IonPage>
+
       <IonContent>
+
         <div className="full-height">
+
           <div className="heading-first">
-            <div className="train-number"><div>22665</div></div>
-            <div className="title"><div>HOMEPAGE</div></div>
+            <div className="train-number">
+              <div>22665</div>
+            </div>
+
+            <div className="title">
+              <div>HOMEPAGE</div>
+            </div>
           </div>
+
           <div className="heading-first">
-            <div className="train-number title">LEGENDS</div>
+            <div className="train-number title">
+              LEGENDS
+            </div>
+
             <div className="title"></div>
           </div>
 
@@ -30,99 +45,171 @@ const Legend: React.FC = () => {
             <div className="train-number title"></div>
             <div className="title"></div>
           </div>
+
           <div className="legendSection">
-            <div className="leg">
-              <IonImg className="legendIcon"
-                style={{ width: '50px' }}
+
+            <IonRouterLink
+              routerLink="/legend-aux"
+              className="leg"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                color: "white",
+                padding: "12px",
+                margin: "8px 0",
+                borderRadius: "10px",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.15)"
+              }}
+            >
+              <IonImg
+                className="legendIcon"
+                style={{ width: "50px" }}
                 src={acNotImg}
                 alt=""
               />
-              <IonRouterLink style={{ color: "white", textDecoration: "none" }} routerLink={'/legend-aux'}>Auxilary Converter</IonRouterLink>
-            </div>
+              <span style={{ marginLeft: "12px", fontSize: "18px" }}>
+                Auxiliary Converter
+              </span>
+            </IonRouterLink>
 
-            <div className="leg">
-              <IonImg className="legendIcon"
-                style={{ width: '50px' }}
+            <IonRouterLink
+              routerLink="/legend-rmpu"
+              className="leg"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                color: "white",
+                padding: "12px",
+                margin: "8px 0",
+                borderRadius: "10px",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.15)"
+              }}
+            >
+              <IonImg
+                className="legendIcon"
+                style={{ width: "50px" }}
                 src={rmRmImg}
                 alt=""
               />
-              <Link style={{ color: "white", textDecoration: "none" }} to={'/legend-rmpu'}>RMPU</Link>
-            </div>
+              <span style={{ marginLeft: "12px", fontSize: "18px" }}>
+                RMPU
+              </span>
+            </IonRouterLink>
 
-            {/* <div className="leg">
-            <IonImg className="legendIcon"
-              style={{ width: '50px' }}
-              src={doorCommFailureImg}
-              alt=""
-            />
-            <Link style={{ color: "white", textDecoration: "none" }} to={'/legend-blower'}>Door</Link>
-          </div> */}
-
-            <div className="leg">
-              <IonImg className="legendIcon"
-                style={{ width: '50px' }}
+            <IonRouterLink
+              routerLink="/legend-blower"
+              className="leg"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                color: "white",
+                padding: "12px",
+                margin: "8px 0",
+                borderRadius: "10px",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.15)"
+              }}
+            >
+              <IonImg
+                className="legendIcon"
+                style={{ width: "50px" }}
                 src={blowerImg}
                 alt=""
               />
-              <Link style={{ color: "white", textDecoration: "none" }} to={'/legend-blower'}>Blower</Link>
-            </div>
+              <span style={{ marginLeft: "12px", fontSize: "18px" }}>
+                Blower
+              </span>
+            </IonRouterLink>
 
-            <div className="leg">
-              <IonImg className="legendIcon"
-                style={{ width: '50px' }}
+            <IonRouterLink
+              routerLink="/legend-condenser"
+              className="leg"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                color: "white",
+                padding: "12px",
+                margin: "8px 0",
+                borderRadius: "10px",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.15)"
+              }}
+            >
+              <IonImg
+                className="legendIcon"
+                style={{ width: "50px" }}
                 src={condenserImg}
                 alt=""
               />
-              <Link style={{ color: "white", textDecoration: "none" }} to={'/legend-condenser'}>Condenser</Link>
-            </div>
+              <span style={{ marginLeft: "12px", fontSize: "18px" }}>
+                Condenser
+              </span>
+            </IonRouterLink>
 
-            {/* <div className="leg">
-            <IonImg className="legendIcon"
-              style={{ width: '50px' }}
-              src={fdsFireImg}
-              alt=""
-            />
-            <Link style={{ color: "white", textDecoration: "none" }} to={'/legend/condenser'}>FDS Fire</Link>
-          </div> */}
-
-            <div className="leg">
-              <IonImg className="legendIcon"
-                style={{ width: '50px' }}
+            <IonRouterLink
+              routerLink="/legend-smoke"
+              className="leg"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                color: "white",
+                padding: "12px",
+                margin: "8px 0",
+                borderRadius: "10px",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.15)"
+              }}
+            >
+              <IonImg
+                className="legendIcon"
+                style={{ width: "50px" }}
                 src={rmpsSmokeImg}
                 alt=""
               />
-              <IonRouterLink style={{ color: "white", textDecoration: "none" }} routerLink={'/legend-smoke'}> RMPU Smoke</IonRouterLink>
-            </div>
+              <span style={{ marginLeft: "12px", fontSize: "18px" }}>
+                RMPU Smoke
+              </span>
+            </IonRouterLink>
 
-            <div className="leg">
-              <IonImg className="legendIcon"
-                style={{ width: '50px' }}
+            <IonRouterLink
+              routerLink="/legend-vfd"
+              className="leg"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                color: "white",
+                padding: "12px",
+                margin: "8px 0",
+                borderRadius: "10px",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.15)"
+              }}
+            >
+              <IonImg
+                className="legendIcon"
+                style={{ width: "50px" }}
                 src={vfdReadyImg}
                 alt=""
               />
-              <IonRouterLink style={{ color: "white", textDecoration: "none" }} routerLink={'/legend-vfd'}>VFD</IonRouterLink>
-            </div>
+              <span style={{ marginLeft: "12px", fontSize: "18px" }}>
+                VFD
+              </span>
+            </IonRouterLink>
 
-            {/* <div className="leg">
-            <IonImg className="legendIcon"
-              style={{ width: '50px' }}
-              src={bulbRImg}
-              alt=""
-            />
-            <Link style={{ color: "white", textDecoration: "none" }} to={'/legend/condenser'}>Passenger Light</Link>
-          </div> */}
-
-            {/* <div className="leg">
-            <IonImg className="legendIcon"
-              style={{ width: '50px' }}
-              src={alarmOkImg}
-              alt=""
-            />
-            <Link style={{ color: "white", textDecoration: "none" }} to={'/legend/condenser'}>Passenger ALarm</Link>
-          </div> */}
           </div>
+
         </div>
+
       </IonContent>
+
     </IonPage>
   );
 };

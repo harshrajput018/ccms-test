@@ -1,87 +1,92 @@
 import {
     IonPage,
     IonContent,
-    IonRouterLink
+    IonRouterLink,
+    IonIcon
 } from "@ionic/react";
+import { home } from "ionicons/icons";
+import { useParams } from "react-router-dom";
 import BackButton from "./backButton";
 
 const EquipmentList = () => {
+
+    const { train } = useParams<{ train: string }>();
 
     const items = [
         {
             icon: "auxiliary-converter.png",
             name: "Auxiliary Converter",
-            link: "/legend-aux"
+            link: `/${train}/legend-aux`
         },
         {
             icon: "rmpu.png",
             name: "RMPU",
-            link: "/legend-rmpu"
+            link: `/${train}/legend-rmpu`
         },
         {
             icon: "door.png",
             name: "Door",
-            link: "/legend-door"
+            link: `/${train}/legend-door`
         },
         {
             icon: "blower.png",
             name: "Blower",
-            link: "/legend-blower"
+            link: `/${train}/legend-blower`
         },
         {
             icon: "condenser.png",
             name: "Condenser",
-            link: "/legend-condenser"
+            link: `/${train}/legend-condenser`
         },
         {
             icon: "fds-fire.png",
             name: "FDS Fire",
-            link: "/legend-fire"
+            link: `/${train}/legend-fire`
         },
         {
             icon: "rmpu-compressor.png",
             name: "RMPU Compressor",
-            link: "/legend-compressor"
+            link: `/${train}/legend-compressor`
         },
         {
             icon: "rmpu-smoke.png",
             name: "RMPU Smoke",
-            link: "/legend-smoke"
+            link: `/${train}/legend-smoke`
         },
         {
             icon: "vfd.png",
             name: "VFD",
-            link: "/legend-vfd"
+            link: `/${train}/legend-vfd`
         },
         {
             icon: "passenger-light.png",
             name: "Passenger Light",
-            link: "/legend-light"
+            link: `/${train}/legend-light`
         },
         {
             icon: "air-filter.png",
             name: "Air Filter",
-            link: "/legend-airfilter"
+            link: `/${train}/legend-airfilter`
         },
         {
             icon: "passenger-alarm.png",
             name: "Passenger Alarm",
-            link: "/legend-alarm"
+            link: `/${train}/legend-alarm`
         },
         {
             icon: "fresh-air-damper.png",
             name: "Fresh Air Damper",
-            link: "/legend-airdamper"
+            link: `/${train}/legend-airdamper`
         },
         {
             icon: "heater.png",
             name: "Heater",
-            link: "/legend-heater"
+            link: `/${train}/legend-heater`
         },
         {
             icon: "uv-lamp.png",
             name: "UV Lamp",
-            link: "/legend-uvlamp"
+            link: `/${train}/legend-uvlamp`
         }
     ];
 
@@ -90,85 +95,114 @@ const EquipmentList = () => {
             <IonContent>
 
                 <div className="heading-first">
+
                     <IonRouterLink
-    routerLink="/trains"
-    className="train-number"
-    style={{
-        textDecoration: 'none',
-        color: 'yellow',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }}
->
-    22665
-</IonRouterLink>
+                        routerLink="/trains"
+                        className="train-number"
+                        style={{
+                            textDecoration: "none",
+                            color: "yellow",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}
+                    >
+                        LEGENDS
+                    </IonRouterLink>
 
                     <div className="title">
-                        <div>HOMEPAGE</div>
-                    </div>
-                </div>
 
-                <div className="heading-first">
-                    <div className="train-number title">
-                        LEGENDS
+                        <IonRouterLink
+                            routerLink={`/trains`}
+                            className="title"
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                textDecoration: "none",
+                                color: "inherit",
+                                width: "100%",
+                                height: "100%"
+                            }}
+                        >
+                            <IonIcon
+                                icon={home}
+                                style={{
+                                    fontSize: "30px",
+                                    color: "white"
+                                }}
+                            />
+                        </IonRouterLink>
+
                     </div>
 
-                    <div className="title"></div>
                 </div>
 
                 <div className="equipment-list">
 
                     {items.map((item, index) => (
 
-                        <div
+                        <IonRouterLink
                             key={index}
-                            className="equipment-item"
+                            routerLink={item.link}
+                            style={{
+                                textDecoration: "none",
+                                color: "inherit",
+                                display: "block"
+                            }}
                         >
 
                             <div
-                                className="icon"
+                                className="equipment-item"
                                 style={{
-                                    width: "55px",
-                                    height: "40px",
-                                    border: "2px solid white",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    flexShrink: 0,
-                                    margin: "4px",
-                                    boxSizing: "border-box",
-                                    overflow: "hidden",
-                                    padding: 0
+                                    cursor: "pointer"
                                 }}
                             >
-                                <img
-                                    src={`/Images/${item.icon}`}
-                                    alt={item.name}
+
+                                <div
+                                    className="icon"
                                     style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        objectFit: "fill",
-                                        display: "block"
+                                        width: "55px",
+                                        height: "40px",
+                                        border: "2px solid white",
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        flexShrink: 0,
+                                        margin: "4px",
+                                        boxSizing: "border-box",
+                                        overflow: "hidden",
+                                        padding: 0
                                     }}
-                                />
+                                >
+                                    <img
+                                        src={`/Images/${item.icon}`}
+                                        alt={item.name}
+                                        style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "fill",
+                                            display: "block"
+                                        }}
+                                    />
+                                </div>
+
+                                <div className="name">
+                                    {item.name}
+                                </div>
+
                             </div>
 
-                            <IonRouterLink
-                                routerLink={item.link}
-                                className="name"
-                            >
-                                {item.name}
-                            </IonRouterLink>
-
-                        </div>
+                        </IonRouterLink>
 
                     ))}
 
                 </div>
 
             </IonContent>
-        <BackButton />
+
+            <BackButton />
+
         </IonPage>
     );
 };

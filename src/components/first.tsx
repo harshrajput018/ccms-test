@@ -1,4 +1,5 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonRouterLink } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton,IonIcon, IonRouterLink } from '@ionic/react';
+import { home } from 'ionicons/icons';
 import { Link, useParams } from 'react-router-dom';
 import './ExploreContainer.css'; // Make sure to keep the CSS file the same
 import BackButton from './backButton';
@@ -14,8 +15,28 @@ const First = () => {
                 <div className="heading-first">
                      <IonRouterLink className="train-number button" routerLink='/trains'>{train}</IonRouterLink>
                     <div className="title">
-                        <div >HOMEPAGE</div>
-                    </div>
+                    
+                              <IonRouterLink
+                                routerLink={`/trains`}
+                                className="title"
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  textDecoration: "none",
+                                  color: "inherit"
+                                }}
+                              >
+                                <IonIcon
+                                  icon={home}
+                                  style={{
+                                    fontSize: "30px",
+                                    color: "white"
+                                  }}
+                                />
+                              </IonRouterLink>
+                    
+                            </div>
                 </div>
                 <div className="heading-first">
                     <div className="train-number"></div>

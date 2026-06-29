@@ -1,6 +1,6 @@
 import React from 'react';
-import { IonContent, IonPage, IonRouterLink } from '@ionic/react';
-
+import { IonContent, IonPage, IonRouterLink, IonIcon } from '@ionic/react';
+import { home } from 'ionicons/icons';
 import Doo_O_D from '../Images/Doo_O_D.png';
 import Door_Cl from '../Images/Door_Cl.png';
 import Door_A_O from '../Images/Door_A_O.png';
@@ -70,7 +70,7 @@ const DoorInfo: React.FC = () => {
 
       <div className="heading-first">
         <IonRouterLink
-    routerLink="/trains"
+    routerLink="/legend"
     className="train-number"
     style={{
         textDecoration: 'none',
@@ -80,11 +80,29 @@ const DoorInfo: React.FC = () => {
         alignItems: 'center'
     }}
 >
-    {'22665'}
+    {'LEGENDS'}
 </IonRouterLink>
 
         <div className="title">
-          <div className="button">HOMEPAGE</div>
+          <IonRouterLink
+    routerLink={`/trains`}
+    className="title"
+    style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit"
+    }}
+>
+    <IonIcon
+        icon={home}
+        style={{
+            fontSize: "30px",
+            color: "white"
+        }}
+    />
+</IonRouterLink>
         </div>
       </div>
 
